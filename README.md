@@ -40,6 +40,8 @@ Connect
 
 [ワイヤーフレーム](https://docs.google.com/spreadsheets/d/1zWUvTsntoSxx33IVawJI0GqJEZF2ndbEgixWF0hZ9j0/edit#gid=775796149)
 
+![ER図](/Users/syougo/workspace/Connect/スクリーンショット 2021-05-29 1.03.37.png)
+
 ### 要件就業Term２つ以上
 - メッセージ機能
 - フォロー機能

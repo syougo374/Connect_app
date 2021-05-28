@@ -4,7 +4,7 @@
 $ git clone https://github.com/syougo374/Connect.git 
 $ cd OneTime
 $ bundle install
-$rails db:create && rails db:migrate
+$ rails db:create && rails db:migrate
 $ rails s
 ````
 

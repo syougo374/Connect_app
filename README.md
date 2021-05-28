@@ -40,7 +40,12 @@ Connect
 
 [ワイヤーフレーム](https://docs.google.com/spreadsheets/d/1zWUvTsntoSxx33IVawJI0GqJEZF2ndbEgixWF0hZ9j0/edit#gid=775796149)
 
-![ER図](スクリーンショット 2021-05-29 1.03.37.png)
+### ER図
+<img src="./public/images/ER.png" alt="ER図" width='650px'>
+
+### 画面遷移図
+<img src="./public/images/imagesenni.png" alt="ER図" width='650px'>
+
 
 ### 要件就業Term２つ以上
 - メッセージ機能

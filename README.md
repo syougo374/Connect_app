@@ -2,7 +2,7 @@
 ### 実行手順
 ````
 $ git clone https://github.com/syougo374/Connect.git 
-$ cd OneTime
+$ cd Connect
 $ bundle install
 $ rails db:create && rails db:migrate
 $ rails s

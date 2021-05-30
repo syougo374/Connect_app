@@ -64,3 +64,4 @@ Connect
 - devise
 - omniauth-twitter
 - omniauth-facebook
+- carrierwave

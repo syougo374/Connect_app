@@ -58,7 +58,7 @@ Connect
 - mini_magick
 - kaminari
 - bcrypt
-- geocoder
+- geocoder  
 - bootstrap
 - rails_admin
 - devise

@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   def index
   end
 
+  def create 
+  end
+
   def _form
   end
 

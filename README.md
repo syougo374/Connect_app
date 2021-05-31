@@ -65,3 +65,4 @@ Connect
 - omniauth-twitter
 - omniauth-facebook
 - carrierwave
+- devise-i18n

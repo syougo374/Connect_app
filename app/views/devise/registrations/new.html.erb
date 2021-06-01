@@ -6,13 +6,12 @@
   <div class="field">
     <%= f.label :ニックネーム %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="field">
     <%= f.label :アイコン %>
     <%= f.file_field :image,autocomplete: "name" %>
-    <%#= f.hidden_field :image_cache %>
+    <%= f.hidden_field :image_cache %> 
   </div>
   
 

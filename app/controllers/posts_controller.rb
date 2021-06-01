@@ -5,9 +5,11 @@ class PostsController < ApplicationController
   end
 
   def create 
-  end
+    @post = current_user.tasks.build(post_params)
+    if @post.save
 
-  def _form
+      
+    end
   end
 
   def edit
@@ -17,5 +19,11 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :content, :image, :address)
   end
 end

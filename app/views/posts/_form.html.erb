@@ -1,5 +1,5 @@
 <%= form_with(model: @post, local: true) do |f| %>
-  <dl>
+  <dl class = 'form_point'>
     <dt><%= f.label :title %></dt>
     <dd><%= f.text_field :title %></dd>
     <br>
@@ -12,5 +12,10 @@
     <dt><%= f.label :image %></dt>
     <dd><%= f.file_field :image,autocomplete: "name" %></dd>
     <%= f.hidden_field :image_cache %>
-    </dl>
-  <% end %>
+    <% if action_name == 'new' %>
+    <%= f.submit '投稿する' %>
+    <% else %>
+    <%= f.submit '更新する' %>
+    <% end %>
+  </dl>
+<% end %>

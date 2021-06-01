@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      user: ユーザー
+    attributes:
+      post:
+        title: タイトル
+        content: 内容
+        image: 写真
+        address: 住所
+      user:
+        image: 写真
+        name: ニックネーム
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶

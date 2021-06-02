@@ -1,7 +1,13 @@
 .content_index img {
   width: 150px;
   height: auto;
-  
+}
+
+.content_index {
+  position: absolute;
+ top: 35%;
+ left: 35%;
+ transform: translateY(-50%);
 }
 
 .form_point {

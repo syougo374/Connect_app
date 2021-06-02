@@ -1,5 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
+
   process resize_to_fill: [300, 300, "Center"]
 
   version :thumb100 do
@@ -21,21 +22,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb300 do
     process resize_to_fit: [300, 300]
   end
+  storage :file
+  # storage :fog
 
-  storage :fog
-  # storage :file
-  
-  def default_url(*args)
-    "default.png"
-  end
-
-  # アップロードファイルの保存先
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def extension_whitelist
-    %w(jpg jpeg gif png)
+ 
+  def extension_allowlist
+    %w(jpg jpeg gif png heic)
   end
 
   def size_range

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only:[:new, :edit, :update, :destroy]
   def index
+    # binding.irb
     @posts = Post.all
   end
 

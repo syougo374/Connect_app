@@ -1,7 +1,7 @@
 <h1>みんなの投稿一覧</h1>
 <% @posts.each do |post| %>
-  <%#= image_tag(post.image.to_s) %>
   <div class = "content_index">
+    <p><%= image_tag(post.image.to_s) %></p>
     <p><%= post.title %></p>
     <p><%= post.content %></p>
     <p><%= post.user.name %></p>

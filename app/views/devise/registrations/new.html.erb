@@ -1,13 +1,13 @@
-<div class ="devise_form">
+<div class ="box">
   <div class ="box-inner">
     <h2><%= t('.sign_up') %></h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="box-email">
+      <div class="box-name">
           <%= f.label :ニックネーム %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
         </div>
-        <div class="box-email">
+        <div class="box-icon">
           <%= f.label :アイコン %>
           <%= f.file_field :image,autocomplete: "name" %>
           <%= f.hidden_field :image_cache %> 

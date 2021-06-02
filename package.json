@@ -2,7 +2,8 @@
   "name": "Connect",
   "private": true,
   "dependencies": {
-    "bootstrap": "3",
-    "jquery": "^3.6.0"
+    "bootstrap": "^5.0.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
   }
 }

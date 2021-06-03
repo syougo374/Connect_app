@@ -17,4 +17,6 @@
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
 
+//= require popper
+//= require bootstrap-sprockets
 //= require jquery3

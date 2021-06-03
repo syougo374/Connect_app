@@ -1,2 +1,12 @@
-<h1>みんなの投稿一覧</h1>
+<div class = "content_index">
+  <h3>みんなの投稿一覧</h3>
+  <% @posts.each do |post| %>
+    <p><%= image_tag(post.image.to_s) %></p>
+    <p><%= post.title %></p>
+    <p><%= post.content %></p>
+    <p><%= post.user.name %></p>
+  <% end %>
+</div>
+
 <%= link_to "新規投稿", new_post_path %> 
+<%= render 'footer' %>

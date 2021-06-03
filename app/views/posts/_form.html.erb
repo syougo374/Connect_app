@@ -10,7 +10,7 @@
     <dd><%= f.text_field :address %></dd>
     <br>
     <dt><%= f.label :image %></dt>
-    <dd><%= f.file_field :image,autocomplete: "name" %></dd>
+    <dd><%= f.file_field :image,autocomplete: "image" %></dd>
     <%= f.hidden_field :image_cache %>
     <% if action_name == 'new' %>
     <%= f.submit '投稿する' %>

@@ -1,0 +1,12 @@
+<br>
+<br>
+<div class = "content_index">
+  <h3>検索結果</h3>
+  <% @results.each do |results| %>
+    <p><%= image_tag(results.image.to_s) %></p>
+    <p><%= results.title %></p>
+    <p><%= results.content %></p>
+    <p><%= results.user.name %></p>
+  <% end %>
+</div>
+<%= link_to 'Top', posts_path %>

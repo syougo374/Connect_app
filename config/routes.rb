@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'tops/index'
   root "tops#index"
-  resources :posts
+  resources :posts do 
+    collection do
+      get 'search'
+    end
+  end
   devise_for :users
   resources :users, only: [:show]
 

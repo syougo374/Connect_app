@@ -2,6 +2,7 @@
   <%= link_to tops_index_path ,class:"navbar-brand" do%>
     <%= image_tag 'logo.jpg', id:'logo' %>
   <% end %>
+  <nav>
   <ul class = "top_menu_bar">
     <% if user_signed_in? %>
       <li class = "item_bar"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -10,4 +11,5 @@
       <li class = "item_bar"><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
   <ul>
+  </nav>
 </div>

@@ -1,0 +1,13 @@
+<div class="listings">
+  <div class="listings_channels">
+    <h2 class="listings_header">Menu</h2>
+    <ul class="channel_list">
+      <%= sidebar_link_item('Myページ', user_path(current_user.id)) %>
+      <%= sidebar_link_item('ホーム', posts_path) %>
+      <%= sidebar_link_item('新規投稿', posts_path) %>
+      <%= sidebar_link_item('メッセージ一覧', posts_path) %>
+      <%= sidebar_link_item('お気に入り一覧', posts_path) %>
+      <%= sidebar_link_item('Myプロフィール', posts_path) %>
+    </ul>
+  </div>
+</div>

@@ -1,8 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<h2>ユーザー</h2>
-  <% @users.each do |user| %>
-    <%= user.name %>
-    <%= user.email %>
-    <%= render 'follow_form', user: user %>
+
+
+<div class ='user_icon'><%= image_tag(@user.image.to_s) %></div>
+<%= @user.name %>
+
+<% @users.each do |user| %>
+  <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
+
+    <div class = 'user_all_index'>
+      <p><%= user.title %></p>
+      <p><%= image_tag(user.image.to_s )%></p>
+      <p><%= user.content %></p>
+      <p><%= user.address %></p>
+    </div>
   <% end %>
+<% end %>
+<%= render 'follow_form', user: @user unless current_user == @user %>
+<%= render 'application/sidebar' %>

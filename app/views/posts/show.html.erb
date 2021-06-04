@@ -1,6 +1,6 @@
 <%= render'application/sidebar' %>
-
-    <%= @post.user.name %>
-    <%= @post.title %>
-    <%#= render 'users/follow_form', user: user %>
+<div class = 'post_showshow'>
+	<div class = "user_show_page"><%=link_to "#{@post.user.name}", user_path(@post.user.id) %></div>
+</div>
+	<%= @post.title %>
 

@@ -12,6 +12,7 @@
       <p><%= user.content %></p>
       <p><%= user.address %></p>
     </div>
+
   <% end %>
 <% end %>
 <%= render 'follow_form', user: @user unless current_user == @user %>

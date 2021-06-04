@@ -13,13 +13,15 @@
     <br>
   <% @posts.each do |post| %>
   <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
+  <div class= 'content_target'>
     <p><%= image_tag(post.image.to_s) %></p>
-    <p><%= post.title %></p>
-    <p><%= post.content %></p>
-    <p><%= post.user.name %></p>
+    <ul>
+    <li><%= post.title %></li>
+    <li><%= post.content %></li>
+    <li><%= post.user.name %></li>
+    </ul>
+</div>
   <% end %>
   <% end %>
 </div>
-
-<%= link_to "新規投稿", new_post_path %>
 <%= render 'footer' %>

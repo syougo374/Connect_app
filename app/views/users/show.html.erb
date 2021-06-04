@@ -1,7 +1,8 @@
 
 
-<div class ='user_icon'><%= image_tag(@user.image.to_s) %></div>
-<%= @user.name %>
+<div class ='user_icon'><%= image_tag(@user.image.to_s) %>
+  <%= @user.name %>
+</div>
 
 <% @users.each do |user| %>
   <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>

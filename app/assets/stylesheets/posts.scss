@@ -8,6 +8,19 @@
   top: 35%;
   left: 40%;
   transform: translateY(-50%);
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.content_target {
+  display: flex;
+  
 }
 
 .form_point {

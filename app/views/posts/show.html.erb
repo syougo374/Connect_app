@@ -1,3 +1,6 @@
 <%= render'application/sidebar' %>
-h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class = 'post_showshow'>
+	<div class = "user_show_page"><%=link_to "#{@post.user.name}", user_path(@post.user.id) %></div>
+</div>
+	<%= @post.title %>
+

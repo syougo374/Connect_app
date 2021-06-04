@@ -3,19 +3,22 @@
     <h2><%= t('.sign_up') %></h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
+      
       <div class="box-name">
           <%= f.label :ニックネーム %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-        </div>
-        <div class="box-icon">
-          <%= f.label :アイコン %>
-          <%= f.file_field :image,autocomplete: "name" %>
-          <%= f.hidden_field :image_cache %> 
-        </div>
+      </div>
+
+      <div class="box-icon">
+        <%= f.label :アイコン %>
+        <%= f.file_field :image,autocomplete: "image" %>
+      </div>
+
       <div class="box-email">
         <%= f.label :email %><br />
         <%= f.email_field :email, autocomplete: "email" %>
       </div>
+
       <div class="box-password">
         <div class="column-left">
           <%= f.label :password %>
@@ -25,10 +28,12 @@
         </div>
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
+
       <div class="box-password">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div><br>
+
       <div class="box-login">
         <%= f.submit t('.sign_up') %>
       </div>

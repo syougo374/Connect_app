@@ -11,13 +11,12 @@ class PostsController < ApplicationController
     @results = @q.result
   end
 
-  def create 
+  def create
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path
     else
       render 'new'
-      
     end
   end
 
@@ -25,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    # binding.irb
   end
 
   def new
@@ -41,6 +41,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :address, :image_cash, :user_id )
+    params.require(:post).permit(:title, :content, :image, :address, :image_cash, :user_id)
   end
 end

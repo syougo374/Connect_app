@@ -13,6 +13,7 @@
   <body>
     <div class = 'container'>
       <%= render 'header' %>
+      <%= yield %> 
       <div class = "alert_plece">
         <% if notice %>
           <p class="alert alert-notice"><%= notice %></p>
@@ -21,9 +22,8 @@
           <p class="alert alert-error"><%= alert %></p>
         <% end %>
       </div>
-      
-      <%= yield %> 
-  
+
+
     </div>
   </body>
 </html>

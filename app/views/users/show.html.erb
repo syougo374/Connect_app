@@ -1,20 +1,29 @@
-
-
-<div class ='user_icon'><%= image_tag(@user.image.to_s) %>
-  <%= @user.name %>
-</div>
-
-<% @users.each do |user| %>
-  <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
-
-    <div class = 'user_all_index'>
-      <p><%= user.title %></p>
-      <p><%= image_tag(user.image.to_s )%></p>
-      <p><%= user.content %></p>
-      <p><%= user.address %></p>
-    </div>
-
-  <% end %>
-<% end %>
-<%= render 'follow_form', user: @user unless current_user == @user %>
 <%= render 'application/sidebar' %>
+<div class = 'content_index'>
+  <div class = 'icon_box'>
+    <div class ='user_icon'>
+      <%= image_tag(@user.image.to_s) %>
+      <%= @user.name %>
+    </div>
+  </div>
+    <div class = 'follow_box'>
+      <%= link_to "フォロー", following_user_path(@user) %>
+      <%= link_to "フォロワー", followers_user_path(@user) %>
+    </div>
+    
+  <div class= 'content_target'>
+    <% @users.each do |user| %>
+      <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
+        <div class = 'index_container'>
+          <p><%= image_tag(user.image.to_s )%></p>
+            <ul class = "sid_content">
+              <li><%= user.title %></li>
+              <li><%= user.content %></li>
+              <li><%= user.address %></li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<%= render 'follow_form', user: @user unless current_user == @user %>

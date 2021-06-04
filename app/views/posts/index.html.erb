@@ -1,27 +1,30 @@
 <%= render'application/sidebar' %>
 <div class = "content_index">
-  <h3>みんなの投稿一覧</h3>
   <div class="search_box">
-    <%= search_form_for @q, url: search_posts_path do |f| %>
-    <%= f.label :address_cont, '住所' %>
-    <%= f.search_field :address_cont %>
-    <br>
-    <%= f.submit  '検索'%>
-    <% end %>
-    <br>
-    <br>
-    <br>
+    <h3>みんなの投稿一覧</h3>
+    <div class="search_box">
+
+      <%= search_form_for @q, url: search_posts_path do |f| %>
+      <%= f.label :address_cont, '住所' %>
+      <%= f.search_field :address_cont %>
+      <%= f.submit  '検索'%>
+      <% end %>
+    </div>
+  </div>
+   
+  <div class= 'content_target'>
   <% @posts.each do |post| %>
   <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
-  <div class= 'content_target'>
+  <div class ="index_container">
     <p><%= image_tag(post.image.to_s) %></p>
-    <ul>
+    <ul class = "sid_content">
     <li><%= post.title %></li>
     <li><%= post.content %></li>
     <li><%= post.user.name %></li>
     </ul>
-</div>
-  <% end %>
-  <% end %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 <%= render 'footer' %>

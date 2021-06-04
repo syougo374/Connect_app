@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :new ]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

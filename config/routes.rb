@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :relationships, only: [:create,:destroy]
+  post "favorites/:post_id/create" => "favorites#create"
+  post "favorites/:post_id/destroy" => "favorites#destroy"
   get 'tops/index'
   root "tops#index"
+  resources :favorites, only: [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
   resources :posts do
     collection do

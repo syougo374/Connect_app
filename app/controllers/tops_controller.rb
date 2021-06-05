@@ -4,4 +4,5 @@ class TopsController < ApplicationController
       redirect_to posts_path(current_user)
     end
   end
+
 end

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   post "favorites/:post_id/destroy" => "favorites#destroy"
   get 'tops/index'
   root "tops#index"
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+
   resources :favorites, only: [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
   resources :posts do
@@ -11,7 +15,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   resources :users, only: [:show] do
     member do
       get :following, :followers

@@ -12,7 +12,7 @@
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
       </div>
-      
+
       <% if devise_mapping.rememberable? %>
         <div class="field">
           <%= f.check_box :remember_me %>
@@ -23,7 +23,7 @@
         <%= f.submit t('.sign_in') %>
       </div>
     <% end %>
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
   </div>
 </div>
 <%= render "footer" %>
-<%#= render "devise/shared/links" %>

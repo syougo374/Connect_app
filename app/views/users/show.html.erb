@@ -1,12 +1,10 @@
 <%= render 'application/sidebar' %>
 <div class = 'content_index'>
-  <div class = 'icon_box'>
-    <div class ='user_icon'>
+  <div class="search_box">
+    <h3>Myプロフィール</h3>
       <%= image_tag(@user.image.to_s) %>
       <%=  %>
       <%= @user.name %>
-    </div>
-  </div>
     <div class = 'follow_box'>
       <% if current_user == @user %>
         <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
@@ -15,6 +13,7 @@
         <%= render 'follow_form', user: @user unless current_user == @user %>
       <% end %>
     </div>
+  </div>
 
   <div class= 'content_target'>
     <% @users.each do |user| %>

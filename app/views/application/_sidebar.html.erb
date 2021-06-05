@@ -13,7 +13,7 @@
       <li><%= sidebar_link_item('メッセージ一覧', root_path) %></li>
     <br>
     <br>
-      <li><%= sidebar_link_item('お気に入り一覧', root_path) %></li>
+      <li><%= sidebar_link_item('お気に入り一覧', favorite_path(current_user.id)) %></li>
     <br>
     <br>
       <li><%= sidebar_link_item('Myプロフィール', user_path(current_user.id)) %></li>

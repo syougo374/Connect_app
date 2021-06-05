@@ -11,19 +11,19 @@
       <% end %>
     </div>
   </div>
-   
+
   <div class= 'content_target'>
-  <% @posts.each do |post| %>
-  <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
-  <div class ="index_container">
-    <p><%= image_tag(post.image.to_s) %></p>
-    <ul class = "sid_content">
-    <li><%= post.title %></li>
-    <li><%= post.content %></li>
-    <li><%= post.user.name %></li>
-    </ul>
-    </div>
-    <% end %>
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
+        <div class ="index_container">
+          <p><%= image_tag(post.image.to_s) %></p>
+          <ul class = "sid_content">
+          <li><%= post.title %></li>
+          <li><%= post.content %></li>
+          <li><%= post.user.name %></li>
+          </ul>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

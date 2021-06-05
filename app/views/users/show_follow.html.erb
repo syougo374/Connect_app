@@ -1,4 +1,6 @@
+<%= render'application/sidebar' %>
 
+<p>フォロワー一覧</p>
 <% @users.each do |user| %>
 <div class = "follow_box">
   <%= image_tag(@user.image.to_s) %>

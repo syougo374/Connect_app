@@ -34,6 +34,7 @@ a {
   
 }
 
+
 .content_target {
   margin-top: 30px;
   overflow: scroll;
@@ -65,3 +66,11 @@ a {
   margin: 30px;
 }
 
+.user_icon .small {
+  flex-direction: row-reverse;
+}
+
+.icon_box .small {
+  display: flex;
+  flex-direction: row-reverse;
+}

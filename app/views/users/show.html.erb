@@ -3,14 +3,19 @@
   <div class = 'icon_box'>
     <div class ='user_icon'>
       <%= image_tag(@user.image.to_s) %>
+      <%=  %>
       <%= @user.name %>
     </div>
   </div>
     <div class = 'follow_box'>
-      <%= link_to "フォロー", following_user_path(@user) %>
-      <%= link_to "フォロワー", followers_user_path(@user) %>
+      <% if current_user == @user %>
+        <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
+        <%= link_to "フォロワー:#{@user.followers.count}", followers_user_path(@user) %>
+      <% else %>
+        <%= render 'follow_form', user: @user unless current_user == @user %>
+      <% end %>
     </div>
-    
+
   <div class= 'content_target'>
     <% @users.each do |user| %>
       <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
@@ -26,4 +31,3 @@
     <% end %>
   </div>
 </div>
-<%= render 'follow_form', user: @user unless current_user == @user %>

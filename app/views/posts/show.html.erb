@@ -1,6 +1,20 @@
 <%= render'application/sidebar' %>
-<div class = 'post_showshow'>
-	<div class = "user_show_page"><%=link_to "#{@post.user.name}", user_path(@post.user.id) %></div>
+<div class = "content_index">
+	<div class = 'icon_box small'>
+		<div class ='user_icon'>
+			<%= image_tag(@post.user.image.to_s) %>
+			<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
+		</div>
+	
+
+		<%= @post.title %>
+		<%= @post.content %>
+		<%= image_tag(@post.image.to_s) %>
+
+
+
+
+
+
 </div>
-	<%= @post.title %>
 

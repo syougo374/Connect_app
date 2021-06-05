@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'relationships/create'
-  get 'relationships/destroy'
+  resources :relationships, only: [:create,:destroy]
   get 'tops/index'
   root "tops#index"
   resources :relationships, only: [:create, :destroy]
@@ -10,11 +9,13 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  resources :users, only: [:show, :index, :new ]
-
-  # if Rails.env.development?
-  #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  # end
+  resources :users, only: [:show] do
+    member do
+      get :following, :followers
+    end
+  end
 end
+
+
 
 

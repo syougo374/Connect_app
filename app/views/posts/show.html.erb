@@ -1,15 +1,21 @@
 <%= render'application/sidebar' %>
 <div class = "content_index">
+
 	<div class = 'icon_box small'>
 		<div class ='user_icon'>
 			<%= image_tag(@post.user.image.to_s) %>
 			<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
 		</div>
-	
-
+	</div>
 		<%= @post.title %>
 		<%= @post.content %>
 		<%= image_tag(@post.image.to_s) %>
+	<div class="btn_edit">
+		<% if current_user.id == @post.user.id %>
+			<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
+			<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
+		<% end %>
+	</div>
 
 		<% unless @post.user_id == current_user.id %>
 			<% if @favorite.present? %>

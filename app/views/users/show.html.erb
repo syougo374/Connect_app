@@ -1,5 +1,9 @@
 <%= render 'application/sidebar' %>
+<div class="edit_edit">
+<%= link_to 'プロフィール編集', edit_user_registration_path,class:"btn btn-outline-warning" %>
+</div>
 <div class = 'content_index'>
+
   <div class="search_box">
     <h3>Myプロフィール</h3>
       <%= image_tag(@user.image.to_s) %>
@@ -18,7 +22,6 @@
     </div>
   </div>
   <%= paginate @users %>
-
   <div class= 'content_target'>
     <% @users.each do |user| %>
       <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>

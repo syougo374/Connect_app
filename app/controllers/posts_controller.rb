@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+
   end
 
   def show
@@ -29,6 +30,26 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = @post.comments.build
   end
+
+  def update
+    if @post.user.id == current_user.id
+      @post.update(post_params)
+      redirect_to posts_path
+      flash[:success] = "Profile has been successfully updated!"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    if @post.user.id == current_user.id
+      @post.destroy
+      redirect_to posts_path
+    else
+      render "edit"
+    end
+  end
+
 
   def new
     @post = Post.new

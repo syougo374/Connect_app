@@ -41,6 +41,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    if @post.user.id == current_user.id
+      @post.destroy
+      redirect_to posts_path
+    else
+      render "edit"
+    end
+  end
+
+
   def new
     @post = Post.new
   end

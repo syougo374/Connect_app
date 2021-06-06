@@ -64,19 +64,22 @@ a {
   margin-bottom: 20px;
 }
 
+.user_icon {
+}
 
 .new_posts {
   text-align: center;
   margin: 30px;
 }
 
-.user_icon .small {
-  flex-direction: row-reverse;
-}
-
-.icon_box .small {
-  display: flex;
-  flex-direction: row-reverse;
+// .user_icon .small {
+  //   flex-direction: row-reverse;
+  // }
+  
+  .icon_box  {
+    // display: flex;
+    flex-direction: column;
+  // flex-direction: row-reverse;
 }
 
 .like-btn {
@@ -89,4 +92,8 @@ a {
   color: #ff2581;
   width: 50px;
   height: auto;
+}
+
+.btn_edit {
+  
 }

@@ -4,7 +4,7 @@
   <div class = "content_target">
     <h3>検索結果</h3>
     <% @results.each do |results| %>
-    <div class = "index_container">
+    <div class = "index_container alert alert-info">
       <p><%= image_tag(results.image.to_s) %></p>
         <div class = "sid_content">
           <p><%= results.title %></p>

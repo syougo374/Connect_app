@@ -30,10 +30,13 @@ a {
 
 .index_container {
   display: flex;
-  margin-left: 10%;
-  
+  // margin-left: 10%;
+  margin: 10px 10% 10px 10%;
 }
 
+.index_container p {
+  margin: 0;
+}
 
 .content_target {
   margin-top: 30px;
@@ -55,12 +58,10 @@ a {
 
 .search_box  {
   flex-direction: row-reverse;
-  
 }
 .search_box {
   text-align:center;
   margin-bottom: 20px;
-  
 }
 
 

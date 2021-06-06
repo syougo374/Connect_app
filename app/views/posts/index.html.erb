@@ -3,7 +3,6 @@
   <div class="search_box">
     <h3>みんなの投稿一覧</h3>
     <div class="search_box">
-
       <%= search_form_for @q, url: search_posts_path do |f| %>
       <%= f.label :address_cont, '住所' %>
       <%= f.search_field :address_cont %>
@@ -11,11 +10,12 @@
       <% end %>
     </div>
   </div>
+       <%= paginate @posts %>
 
   <div class= 'content_target'>
     <% @posts.each do |post| %>
       <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
-        <div class ="index_container">
+        <div class ="index_container alert alert-info ">
           <p><%= image_tag(post.image.to_s) %></p>
           <ul class = "sid_content">
           <li><%= post.title %></li>
@@ -26,5 +26,6 @@
       <% end %>
     <% end %>
   </div>
+  <%#= paginate @posts, theme: 'twitter-bootstrap-4'%>
 </div>
 

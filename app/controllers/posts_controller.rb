@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @posts = Post.all
+    # @posts = Post.all.page(params[:page]).per(10)
+    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(4)
   end
 
   def search

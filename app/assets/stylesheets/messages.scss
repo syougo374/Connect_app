@@ -1,0 +1,41 @@
+.ui {
+  height: 620px;
+  margin-bottom: -15px;
+  padding: 15px 40px;
+  overflow: scroll;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+}
+
+.big_ui {
+  height: 620px;
+  margin-bottom: -15px;
+  padding: 15px 40px;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+}
+
+.field_message {
+  display: flex;
+}
+
+.segment  {
+  background-color: rgb(221, 255, 255);
+}
+
+.message_header {
+  background-color: rgb(106, 255, 106);
+  color: white;
+  padding: 5px 10px;
+  margin-bottom: 0;
+  border-radius: 20px 3px 20px 20px;
+  text-align: left;
+  width: 400px;
+  height: auto;
+  
+}
+
+.item {
+  text-align: right;
+  margin-left: 30%;
+}

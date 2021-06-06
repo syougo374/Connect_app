@@ -1,0 +1,17 @@
+<%= render 'application/sidebar' %>
+<div class="conversation_container">
+  <table class="table table-hover ">
+  <div class = "conversations-h2">
+      <h2>メッセージ一覧</h2>
+  </div>
+    <tbody class = "ggg">
+      <% @conversations.each do |conversation| %>
+        <td>
+          <% if conversation.target_user(current_user).present? %>
+            <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
+          <% end %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

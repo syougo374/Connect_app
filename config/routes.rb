@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
   resources :favorites, only: [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
   resources :posts do

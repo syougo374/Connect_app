@@ -4,7 +4,7 @@
   <div class = "conversations-h2">
       <h2>メッセージ一覧</h2>
   </div>
-    <tbody class = "ggg">
+    <tbody class = "alert alert-info">
       <% @conversations.each do |conversation| %>
         <td>
           <% if conversation.target_user(current_user).present? %>

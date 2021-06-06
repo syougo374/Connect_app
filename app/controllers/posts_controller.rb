@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all.page(params[:page]).per(10)
-    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(10)
+    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(4)
   end
 
   def search

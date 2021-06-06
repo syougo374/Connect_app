@@ -4,6 +4,7 @@
   <div class = "conversations-h2">
       <h2>メッセージ一覧</h2>
   </div>
+  <%= paginate @conversations %>
     <tbody class = "alert alert-info">
       <% @conversations.each do |conversation| %>
         <td>
@@ -14,4 +15,6 @@
       <% end %>
     </tbody>
   </table>
+         <%#= paginate @conversations %>
+
 </div>

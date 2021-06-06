@@ -1,8 +1,7 @@
 class FavoritesController < ApplicationController
   def show
-    # binding.irb
-    # @user = User.find(params[:id])
-    @favorites = current_user.favorites.all
+    @favorites = current_user.favorites.all.order(created_at: :desc).page(params[:page]).per(3)
+    # @favorites = current_user.favorites.all
   end
   def create
     # favorite = current_user.favorites.create(post_id: params[:post_id])

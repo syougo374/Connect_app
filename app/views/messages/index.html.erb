@@ -1,32 +1,35 @@
+<%= render 'application/sidebar' %>
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
-<div class="ui segment">
-  <% @messages.each do |message| %>
-    <% if message.body.present? %>
-      <div class="item">
-        <div class="content">
-          <div class="header"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
-          <div class="list">
-            <div class="item">
-              <i class="right triangle icon"></i>
-              <%= message.body %> /
-              <% if message.user == current_user %>
-                <%= message.read ? '既読' : '未読' %>
-              <% end %>  
+<div class = "big_ui">
+  <div class="ui segment">
+    <% @messages.each do |message| %>
+      <% if message.body.present? %>
+        <div class="item">
+          <div class="content">
+            <div class="message_user_name"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
+            <div class="list">
+              <div class="item">
+                <i class="right triangle icon"></i>
+                <div class = "message_header">
+                <%= message.body %>
+                </div>
+                <% if message.user == current_user %>
+                  <%= message.read ? '既読' : '未読' %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="field_message">
+    <%= form_with(model: [@conversation, @message]) do |f| %>
+      <%= f.text_area :body, class: "form-control" %>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+      <%= f.submit "メッセージを送る" %>
+    <% end %>
+  </div>
 </div>
-<%= form_with(model: [@conversation, @message]) do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div>
-    <%= f.submit "メッセージを送る" %>
-  </div>
-<% end %>

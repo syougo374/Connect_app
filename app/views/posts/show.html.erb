@@ -5,11 +5,14 @@
 			<%= image_tag(@post.user.image.to_s) %>
 			<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
 		</div>
-	
 
 		<%= @post.title %>
 		<%= @post.content %>
 		<%= image_tag(@post.image.to_s) %>
+
+		<% if current_user.id == @post.user.id %>
+			<%= link_to "投稿編集", edit_post_path(@post) %>
+		<% end %>
 
 		<% unless @post.user_id == current_user.id %>
 			<% if @favorite.present? %>

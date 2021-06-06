@@ -22,12 +22,23 @@ class PostsController < ApplicationController
   end
 
   def edit
+
   end
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
     @comment = @post.comments.build
+  end
+
+  def update
+    if @post.user.id == current_user.id
+      @post.update(post_params)
+      redirect_to posts_path
+      flash[:success] = "Profile has been successfully updated!"
+    else
+      render 'edit'
+    end
   end
 
   def new

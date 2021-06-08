@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
-    @comment = @post.comments.build
+    @comment = Comment.new
   end
 
   def update

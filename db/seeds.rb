@@ -1,6 +1,6 @@
 user1 = User.create!(
   name: "Nujabes girl",
-  email: "test@gmail.com",
+  email: "test@docomo.com",
   password: "password",
   image: File.open("app/assets/images/16083C3F-3C68-404A-AAE9-E42169BFDCBB_1_105_c.jpeg"),
 )
@@ -21,7 +21,7 @@ post1_2 = Post.create!(
 #------------
 user2 = User.create!(
   name: "tsuru",
-  email: "test2@@gmail.com",
+  email: "test2@docomo.com",
   password: "password",
   image: File.open("app/assets/images/B8C5C614-41A0-4529-9644-6F354FE151E4_1_105_c.jpeg"),
 )
@@ -41,21 +41,21 @@ post2_2 = Post.create!(
 )
 user3 = User.create!(
   name: "miemie",
-  email: "test3@@gmail.com",
+  email: "test3@docomo.com",
   password: "password",
   image: File.open("app/assets/images/B8C5C614-41A0-4529-9644-6F354FE151E4_1_105_c.jpeg"),
 )
 post3_1 = Post.create!(
   title: "レトロな銭湯",
   content: "レトロな感じに凄く惹かれる！！店主のおじちゃんが凄く優しくて面白い！！",
-  address: "三重県伊賀市上野",
+  address: "三重県伊賀市",
   image: File.open("app/assets/images/f0097493_2330448.jpeg"),
   user_id: user3.id,
 )
 post3_2 = Post.create!(
   title: "たこ焼きミルク",
   content: "夫婦で仲良くたこ焼きを作られていて凄く和む",
-  address: "三重県名張市すずらん台西１番町 ",
+  address: "三重県名張市",
   image: File.open("app/assets/images/8D88EB9F-6E51-447A-B5F0-9160AA2967B1_1_105_c.jpeg"),
   user_id: user3.id,
 )

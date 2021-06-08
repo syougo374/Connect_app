@@ -16,6 +16,8 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
+//= require underscore
+//= require gmaps/google
 
 //= require popper
 //= require bootstrap-sprockets

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all.page(params[:page]).per(10)
-    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(4)
+    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(10)
   end
 
   def search
@@ -65,6 +65,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :address, :image_cash, :user_id)
+    params.require(:post).permit(:title, :content, :image, :address, :image_cash, :user_id, :latitude, :longitude)
   end
 end

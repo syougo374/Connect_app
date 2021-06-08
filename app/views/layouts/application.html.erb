@@ -13,9 +13,9 @@
   </head>
 
 
-  <body data-controller = <%= controller.controller_name %> >
+  <body>
+    <%= render 'header' %>
     <div class = 'container'>
-      <%= render 'header' %>
       <div class = "alert_plece">
         <% if notice %>
           <p class="alert alert-notice"><%= notice %></p>

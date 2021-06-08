@@ -4,14 +4,20 @@
   border-radius: 50px;
 }
 
+
+
 .content_index {
   // position: absolute;
-  // top: 35%;
-  // left: 40%;
+  // top: 50px;
+  // left: 20%;
   // transform: translateY(-50%);
   margin-top: 50px;
   display: flex;
   flex-direction: column
+}
+
+.post_show {
+  text-align: center;
 }
 
 ul {
@@ -40,7 +46,7 @@ a {
 }
 
 .content_target {
-  margin-top: 30px;
+  margin-top: 0;
   overflow: scroll;
   height: 600px;
   flex-direction: column;
@@ -57,12 +63,20 @@ a {
   text-align: center;
 }
 
-.search_box  {
-  flex-direction: row-reverse;
+.content_index h3 {
+  text-align: center;
 }
+
+.ulul {
+  display: flex;
+  display: inline-flex;
+}
+
 .search_box {
+  flex-direction: row-reverse;
   text-align:center;
   margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 .new_posts {

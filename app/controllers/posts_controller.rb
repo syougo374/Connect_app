@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all.page(params[:page]).per(10)
-    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(10)
+    @posts = Post.order(created_at: :desc).all.page(params[:page]).per(5)
   end
 
   def search
@@ -27,8 +27,9 @@ class PostsController < ApplicationController
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
-    @comments = @post.comments
-    @comment = Comment.new
+    # @post = Post.find(params[:id])
+    @comment = Comment.new #①
+    @comments = @post.comments #②
   end
 
   def update

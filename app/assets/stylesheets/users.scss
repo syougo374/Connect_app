@@ -9,13 +9,7 @@
   padding: 0px;
   text-decoration: none;
 }
-.box {
-  width: 350px;
-  height: 430px;
-  margin: 60px auto 0;
-  border-radius: 4px;
-  border: 1px #ddd solid;
-}
+
 .login_box {
   width: 350px;
   height: 300px;
@@ -29,12 +23,16 @@
 }
 
 .box {
-  height: 800px;
+  height: auto;
   width: 450px;
+  margin: 100px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
 }
 
 .box-inner {
   padding: 20px 26px;
+  background-color: #fff;
 }
 
 h1 {

@@ -1,5 +1,5 @@
 <%= render'application/sidebar' %>
-<div class = "content_index">
+<div class = "content_index post_show">
 
 	<div class = 'icon_box small'>
 		<div class ='user_icon'>
@@ -28,7 +28,18 @@
 			<% end %>
 			<% end %>
 		<% end %>
-</div>
 <%= render 'map' %>
+</div>
 
 
+ <div>
+    <h4>コメント</h4>
+    <div id="comments_area"><!-- #① -->
+      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>  
+    <% if user_signed_in? %>
+      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+    <% end %>
+  </div>

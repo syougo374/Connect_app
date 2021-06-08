@@ -103,6 +103,8 @@ GEM
       devise (>= 4.7.1)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.1)
     geocoder (1.6.7)
     globalid (0.4.2)
@@ -315,6 +317,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   devise-i18n
+  faker
   geocoder
   jbuilder (~> 2.5)
   jquery-rails

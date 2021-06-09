@@ -27,8 +27,10 @@ body{
 }
 
 .item_bar {
-  width: 80px;
+  width: 90px;
   display:inline-block;
+  margin: 0 10px;
+
 }
 
 .item_bar a {
@@ -46,7 +48,7 @@ body{
   flex-direction: row-reverse;
   align-items: center;
   margin: auto 0;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
 

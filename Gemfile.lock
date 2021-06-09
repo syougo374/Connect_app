@@ -101,6 +101,10 @@ GEM
     devise-bootstrap-views (1.1.0)
     devise-i18n (1.9.4)
       devise (>= 4.7.1)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     faker (2.18.0)
@@ -318,6 +322,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   devise-i18n
+  dotenv-rails
   faker
   geocoder
   gmaps4rails

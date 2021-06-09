@@ -33,6 +33,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'rails-i18n', '~> 5.1'
+gem 'cancancan'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'carrierwave'
 gem 'mimemagic'

@@ -2,6 +2,7 @@ user1 = User.create!(
   name: "Nujabes girl",
   email: "test@docomo.com",
   password: "password",
+  admin: true,
   image: File.open("app/assets/images/16083C3F-3C68-404A-AAE9-E42169BFDCBB_1_105_c.jpeg"),
 )
 post1_1 = Post.create!(

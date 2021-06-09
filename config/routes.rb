@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :admins
   resources :relationships, only: [:create,:destroy]
   post "favorites/:post_id/create" => "favorites#create"

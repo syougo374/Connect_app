@@ -2,28 +2,26 @@
   <div class="box-inner">
     <h2><%= t('.sign_in') %></h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="box-email">
+         <div class = "alert_plece">
+        <% if alert %>
+          <p class="alert alert-error"><%= alert %></p>
+        <% end %>
+      </div>
+      <div class="box-email new_user">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="box-password">
-        <div class="column-left">
+        <div class="column-left new_user">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
       </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-      <div class="box-login">
+      <div class="box-login new_user">
         <%= f.submit t('.sign_in') %>
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post,class:'new_user' %>
       </div>
     <% end %>
-        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
   </div>
 </div>
 <%= render "footer" %>

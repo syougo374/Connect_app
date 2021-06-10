@@ -1,5 +1,8 @@
 <%= render'application/sidebar' %>
 <div class = "content_index">
+  <% if notice %>
+    <p class="alert alert-notice"><%= notice %></p>
+  <% end %>
     <h3>みんなの投稿一覧</h3>
   <div class="search_box">
     <%= search_form_for @q, url: search_posts_path do |f| %>

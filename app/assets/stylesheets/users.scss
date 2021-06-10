@@ -33,6 +33,17 @@
 .box-inner {
   padding: 20px 26px;
   background-color: #fff;
+  height: max-content;
+  // display: flex;
+  // flex-direction: column;
+}
+
+.new_user {
+  margin: 20px 0;
+}
+.new_user a{
+  margin: 20px 0;
+  display: block;
 }
 
 h1 {
@@ -90,6 +101,7 @@ h1 {
 .box-login {
   
   margin-bottom: 26px;
+  height: min-content;
 }
 
 .box-login input[type="submit"] {

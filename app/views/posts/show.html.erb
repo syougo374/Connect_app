@@ -1,45 +1,52 @@
 <%= render'application/sidebar' %>
-<div class = "content_index post_show">
-
-	<div class = 'icon_box small'>
+<div class = "index_container ">
+	<div class = 'icon_box post_show'>
 		<div class ='user_icon'>
 			<%= image_tag(@post.user.image.to_s) %>
-			<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
+			<%=link_to "ユーザー名:#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
 		</div>
 	</div>
-		<%= @post.title %>
-		<%= @post.content %>
-		<%= image_tag(@post.image.to_s) %>
-	<div class="btn_edit">
-		<% if current_user.id == @post.user.id %>
-			<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
-			<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
-		<% end %>
-	</div>
+	<div class="show_content">
+		<div class="show_content_area">
+			<%= image_tag(@post.image.to_s) %><br>
+			<div class="show_comments">
+				<div id="comments_area"><!-- #① -->
+				<h4>コメント</h4>
+					<!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+					<%= render partial: 'comments/index', locals: { comments: @comments } %>
+				</div>
+			</div>
+		</div>
+			<% if user_signed_in? %>
+				<!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+				<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+			<% end %>
+  	</div>
+		<%= "タイトル:#{@post.title}" %><br>
+		<%= "内容:#{@post.content}" %><br>
+		<div class="btn_edit">
+			<% if current_user.id == @post.user.id %>
+				<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
+				<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
+			<% end %>
 
-		<% unless @post.user_id == current_user.id %>
+			<% unless @post.user_id == current_user.id %>
 			<% if @favorite.present? %>
 				<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
-				<span class="fa fa-heart like-btn-unlike"></span>
+					<span class="fa fa-heart like-btn-unlike"></span>
 				<% end %>
 			<% else %>
 				<%= link_to("/favorites/#{@post.id}/create", {method: "post"}) do %>
         <span class="fa fa-heart like-btn"></span>
+				<% end %>
 			<% end %>
 			<% end %>
-		<% end %>
-<%= render 'map' %>
+			<div class="map_area">
+				<%= render 'map' %>
+			</div>
+		</div>
+	</div>
 </div>
 
 
- <div>
-    <h4>コメント</h4>
-    <div id="comments_area"><!-- #① -->
-      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-      <%= render partial: 'comments/index', locals: { comments: @comments } %>
-    </div>  
-    <% if user_signed_in? %>
-      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-      <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-    <% end %>
-  </div>
+ 

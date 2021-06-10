@@ -1,34 +1,34 @@
 <%= render'application/sidebar' %>
 <div class = "content_index">
-  <% if notice %>
-    <p class="alert alert-notice"><%= notice %></p>
-  <% end %>
-    <h3>みんなの投稿一覧</h3>
-  <div class="search_box">
-    <%= search_form_for @q, url: search_posts_path do |f| %>
-      <ul class ="ulul">
-        <li><%= f.label :address_cont, '住所' %></li>
-        <li><%= f.search_field :address_cont %></li>
-        <li><%= f.submit  '検索'%></li>
-      </ul>
+  <div class = "content_inner">
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
-  </div>
-       <%= paginate @posts %>
-
-  <div class= 'content_target'>
-    <% @posts.each do |post| %>
-      <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
-        <div class ="index_container alert alert-info ">
-          <p><%= image_tag(post.image.to_s) %></p>
-          <ul class = "sid_content">
-          <li><%= post.title %></li>
-          <li><%= post.content %></li>
-          <li><%= post.user.name %></li>
-          </ul>
-        </div>
+      <h3>みんなの投稿一覧</h3>
+    <div class="search_box">
+      <%= search_form_for @q, url: search_posts_path do |f| %>
+        <ul class ="ulul">
+          <li><%= f.label :address_cont, '住所' %></li>
+          <li><%= f.search_field :address_cont %></li>
+          <li><%= f.submit  '検索'%></li>
+        </ul>
       <% end %>
-    <% end %>
+    </div>
+        <%= paginate @posts %>
+
+    <div class= 'content_target'>
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>
+          <div class ="index_container alert alert-info ">
+            <p><%= image_tag(post.image.to_s) %></p>
+            <ul class = "sid_content">
+              <li><%= post.title %></li>
+              <li><%= post.content %></li>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <%#= paginate @posts, theme: 'twitter-bootstrap-4'%>
 </div>
 

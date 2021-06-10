@@ -11,9 +11,11 @@
 }
 
 .login_box {
+  position:sticky;
+  top: 15%;
   width: 350px;
-  height: 300px;
-  margin: 150px auto 0;
+  height: auto;
+  margin:  auto;
   border-radius: 4px;
   border: 1px #ddd solid;
 }
@@ -23,9 +25,11 @@
 }
 
 .box {
+  position:sticky;
+  top: 10%;
   height: auto;
   width: 450px;
-  margin: 100px auto 0;
+  margin:  auto ;
   border-radius: 4px;
   border: 1px #ddd solid;
 }
@@ -129,15 +133,18 @@ h1 {
   text-align: center;
 }
 .follow_box a{
- padding:0 10px;
+ padding-right: 10px;
 }
 
 .my_show {
   width: 100%;
 }
 
-.user_icon {
+.user_icon  a {
   justify-content: center;
+}
+.user_icon  {
+  margin-top: 5%;
 }
 
 .user_icon img {
@@ -148,5 +155,9 @@ h1 {
 
 .icon_box {
   display: flex;
+}
+
+.btn_edit {
+  width: 100px;
 }
 

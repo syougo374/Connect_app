@@ -1,39 +1,40 @@
 <%= render 'application/sidebar' %>
-<div class="edit_edit">
-<%= link_to 'プロフィール編集', edit_user_registration_path,class:"btn btn-outline-warning" %>
-</div>
 <div class = 'content_index'>
-
-  <div class="search_box">
-    <h3>Myプロフィール</h3>
-      <%= image_tag(@user.image.to_s) %>
-      <%=  %>
-      <%= @user.name %>
-    <div class = 'follow_box'>
-      <% if current_user == @user %>
-        <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
-        <%= link_to "フォロワー:#{@user.followers.count}", followers_user_path(@user) %>
-      <% else %>
-        <%= render 'follow_form', user: @user unless current_user == @user %>
-        <%= link_to conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post do %>
-        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-      <% end %>
+  <div class = "content_inner">
+    <div class="edit_edit">
+      <%= link_to 'プロフィール編集', edit_user_registration_path,class:"btn btn-outline-warning" %>
+    </div>
+      <div class="search_box">
+        <h3>Myプロフィール</h3>
+        <%= image_tag(@user.image.to_s) %>
+        <%=  %>
+        <%= @user.name %>
+        <div class = 'follow_box'>
+          <% if current_user == @user %>
+            <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
+            <%= link_to "フォロワー:#{@user.followers.count}", followers_user_path(@user) %>
+          <% else %>
+            <%= render 'follow_form', user: @user unless current_user == @user %>
+            <%= link_to conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post do %>
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <%= paginate @users %>
+    <div class= 'content_target'>
+      <% @users.each do |user| %>
+        <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
+          <div class = 'index_container alert alert-info'>
+            <p><%= image_tag(user.image.to_s )%></p>
+              <ul class = "sid_content">
+                <li class="text-break"><%= user.title %></li>
+                <li class="text-break"><%= user.content %></li>
+                <li class="text-break"><%= user.address %></li>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
     </div>
-  </div>
-  <%= paginate @users %>
-  <div class= 'content_target'>
-    <% @users.each do |user| %>
-      <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
-        <div class = 'index_container alert alert-info'>
-          <p><%= image_tag(user.image.to_s )%></p>
-            <ul class = "sid_content">
-              <li><%= user.title %></li>
-              <li><%= user.content %></li>
-              <li><%= user.address %></li>
-          </ul>
-        </div>
-      <% end %>
-    <% end %>
   </div>
 </div>

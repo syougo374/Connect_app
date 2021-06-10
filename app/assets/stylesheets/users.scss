@@ -11,9 +11,11 @@
 }
 
 .login_box {
+  position:sticky;
+  top: 15%;
   width: 350px;
-  height: 300px;
-  margin: 150px auto 0;
+  height: auto;
+  margin:  auto;
   border-radius: 4px;
   border: 1px #ddd solid;
 }
@@ -23,9 +25,11 @@
 }
 
 .box {
+  position:sticky;
+  top: 10%;
   height: auto;
   width: 450px;
-  margin: 100px auto 0;
+  margin:  auto ;
   border-radius: 4px;
   border: 1px #ddd solid;
 }
@@ -33,6 +37,17 @@
 .box-inner {
   padding: 20px 26px;
   background-color: #fff;
+  height: max-content;
+  // display: flex;
+  // flex-direction: column;
+}
+
+.new_user {
+  margin: 20px 0;
+}
+.new_user a{
+  margin: 20px 0;
+  display: block;
 }
 
 h1 {
@@ -90,6 +105,7 @@ h1 {
 .box-login {
   
   margin-bottom: 26px;
+  height: min-content;
 }
 
 .box-login input[type="submit"] {
@@ -117,15 +133,18 @@ h1 {
   text-align: center;
 }
 .follow_box a{
- padding:0 10px;
+ padding-right: 10px;
 }
 
 .my_show {
   width: 100%;
 }
 
-.user_icon {
+.user_icon  a {
   justify-content: center;
+}
+.user_icon  {
+  margin-top: 5%;
 }
 
 .user_icon img {
@@ -138,3 +157,10 @@ h1 {
   display: flex;
 }
 
+.btn_edit {
+  width: 100px;
+}
+
+.text-break {
+  text-align: left;
+}

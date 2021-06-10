@@ -22,8 +22,8 @@
           <div class ="index_container alert alert-info ">
             <p><%= image_tag(post.image.to_s) %></p>
             <ul class = "sid_content">
-              <li><%= post.title %></li>
-              <li><%= post.content %></li>
+              <li class="text-break">タイトル:<%= post.title %></li>
+              <li class="text-break"><%= "コンテント:#{post.content}" %></li>
             </ul>
           </div>
         <% end %>

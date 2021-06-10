@@ -12,8 +12,8 @@
         <div class ="index_container alert alert-info">
           <p><%= image_tag(favorite.post.image.to_s) %></p>
           <ul class = "sid_content">
-            <li><%= favorite.user.name %></li>
-            <li><%= favorite.post.title %></li>
+            <li  class="text-break"><%= favorite.user.name %></li>
+            <li  class="text-break"><%= favorite.post.title %></li>
           </ul>
         </div>
       <% end %>

@@ -9,7 +9,7 @@
       <%= search_form_for @q, url: search_posts_path do |f| %>
         <ul class ="ulul">
           <li><%= f.label :address_cont, '住所' %></li>
-          <li><%= f.search_field :address_cont %></li>
+          <li><%= f.search_field :address_cont ,placeholder:"住所を入力してね" %></li>
           <li><%= f.submit  '検索'%></li>
         </ul>
       <% end %>
@@ -24,6 +24,7 @@
             <ul class = "sid_content">
               <li class="text-break">タイトル:<%= post.title %></li>
               <li class="text-break"><%= "コンテント:#{post.content}" %></li>
+              <li class="text-break"><%= "住所:#{post.address}" %></li>
             </ul>
           </div>
         <% end %>

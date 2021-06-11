@@ -22,7 +22,7 @@
         </div>
       </div>
       <%= paginate @users %>
-    <div class= 'content_target'>
+    <div class= 'content_target_user'>
       <% @users.each do |user| %>
         <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
           <div class = 'index_container alert alert-info'>

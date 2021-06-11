@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def search
+# binding.irb
     @results = @q.result
   end
 

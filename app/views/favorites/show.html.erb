@@ -1,22 +1,25 @@
 <%= render'application/sidebar' %>
 <div class = "content_index">
-  <div class="search_box">
-    <h3>お気に入り一覧</h3>
-    <%= image_tag(current_user.image.to_s) %>
-    <%= current_user.name %>
-  </div>
+  <div class = "content_inner">
+    <div class="search_box">
+      <h3>お気に入り一覧</h3>
+      <%#= image_tag(current_user.image.to_s) %>
+      <%#= current_user.name %>
+    </div>
+  <%= paginate @favorites %>
 
-  <div class= 'content_target'>
-    <% @favorites.each do |favorite| %>
-      <%= link_to post_path(favorite.post.id), class:' post-color','data-turbolinks': false do %>
-        <div class ="index_container alert alert-info">
-          <p><%= image_tag(favorite.post.image.to_s) %></p>
-          <ul class = "sid_content">
-            <li  class="text-break"><%= favorite.user.name %></li>
-            <li  class="text-break"><%= favorite.post.title %></li>
-          </ul>
-        </div>
+    <div class= 'content_target_favorite'>
+      <% @favorites.each do |favorite| %>
+        <%= link_to post_path(favorite.post.id), class:' post-color','data-turbolinks': false do %>
+          <div class ="index_container alert alert-info">
+            <p><%= image_tag(favorite.post.image.to_s) %></p>
+            <ul class = "sid_content">
+              <li  class="text-break"><%= favorite.user.name %></li>
+              <li  class="text-break"><%= favorite.post.title %></li>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

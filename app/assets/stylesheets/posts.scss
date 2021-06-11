@@ -10,9 +10,11 @@
 
 
 .content_index {
-  max-height: 100%;
+  height: 100%;
   display: flex;
   margin-bottom: -50px;
+  width: auto;
+
 }
 
 .post_show {
@@ -39,6 +41,7 @@ a {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  width: 400px;
 }
 
 .index_container a{
@@ -62,6 +65,24 @@ a {
   // display: flex;
   width: 100%;
 }
+.content_target_user {
+  margin-top: 0;
+  overflow: scroll;
+  max-height: 50%;
+  flex-direction: column;
+  word-wrap:break-word;
+  // display: flex;
+  width: 100%;
+}
+.content_target_favorite {
+  margin-top: 0;
+  overflow: scroll;
+  max-height: 100%;
+  flex-direction: column;
+  word-wrap:break-word;
+  // display: flex;
+  width: 100%;
+}
 
 .content_target h3 {
   text-align:center;
@@ -69,6 +90,16 @@ a {
 }
 
 .form_point {
+  text-align: center;
+  width: 400px;
+}
+
+.form_point input {
+  width: 300px;
+  text-align: center;
+}
+.form_point textarea {
+  width: 300px;
   text-align: center;
 }
 

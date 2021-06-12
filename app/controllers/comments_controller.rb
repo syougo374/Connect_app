@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :which_post?, only: [:create, :edit, :update]
+  before_action :which_post?, only: [:create, :edit, :update, :destroy]
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
   def which_post?
     @post = Post.find(params[:post_id])
   end
-  
+
   def permitted_parameter
     params.require(:comment).permit(:post_id, :content).merge(user_id: current_user.id)
   end

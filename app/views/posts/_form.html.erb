@@ -1,13 +1,13 @@
 <%= form_with(model: @post, local: true) do |f| %>
   <dl class = 'form_point'>
     <dt><%= f.label :title %></dt>
-    <dd><%= f.text_field :title %></dd>
+    <dd><%= f.text_field :title,placeholder:"タイトルを30文字まで入力可" %></dd>
     <br>
     <dt><%= f.label :content %></dt>
-    <dd><%= f.text_area :content %></dd>
+    <dd><%= f.text_area :content ,placeholder:"投稿内容を255文字まで入力可" %></dd>
     <br>
     <dt><%= f.label :address %></dt>
-    <dd><%= f.text_field :address %></dd>
+    <dd><%= f.text_field :address,placeholder:"住所を50文字まで入力可" %></dd>
     <br>
     <dt><%= f.label :image %></dt>
     <dd><%= f.file_field :image,autocomplete: "image" %></dd>

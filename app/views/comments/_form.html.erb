@@ -9,9 +9,9 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div class="field form_point">
     <%= form.label :content %><br>
-    <%= form.text_area :content %>
+    <%= form.text_area :content,placeholder: "コメントを255文字以内で送ってみよう" %>
   </div>
   <div class="actions">
     <%= form.submit %>

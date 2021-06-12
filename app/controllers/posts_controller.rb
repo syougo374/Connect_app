@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def search
+# binding.irb
     @results = @q.result
   end
 
@@ -28,8 +29,10 @@ class PostsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     # @post = Post.find(params[:id])
-    @comment = Comment.new #①
-    @comments = @post.comments #②
+    # @comment = Comment.new #①
+    # @comments = @post.comments #②
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
 
   def update
@@ -58,6 +61,7 @@ class PostsController < ApplicationController
 
   private
   def set_post
+    # binding.irb
     @post = Post.find(params[:id])
   end
 

@@ -1,20 +1,36 @@
-<%= render 'application/sidebar' %>
-<div class="conversation_container">
-  <table class="table table-hover ">
-  <div class = "conversations-h2">
-      <h2>メッセージ一覧</h2>
-  </div>
-  <%= paginate @conversations %>
-    <tbody class = "alert alert-info">
-      <% @conversations.each do |conversation| %>
-        <td>
-          <% if conversation.target_user(current_user).present? %>
-            <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
-          <% end %>
-        </td>
-      <% end %>
-    </tbody>
-  </table>
-         <%#= paginate @conversations %>
 
+<%= render'application/sidebar' %>
+<div class='container'>
+<div class="conversation_container">
+  <h3 class='text-center conv'><i class="fa fa-comments" aria-hidden="true"></i><span class='small-space'>メッセージ一覧</h3>
+  <div class='container-fulid'>
+  <div class='conversations_inner'>
+
+    <div class='row mt-4'>
+      <% @conversations.each do |conversation| %>
+        <% if conversation.target_user(current_user).present? %>
+          <div class='col-md-5 offset-md-1 border rounded-lg my-2 pt-1 posts'>
+            <%= link_to conversation_messages_path(conversation) do%>
+              <div class='row center dm-index-row'>
+                <div clsss='col-5 dm-index-left'>
+                  <%= image_tag conversation.target_user(current_user).image.thumb100.url, class:'img-fluid img-thumbnail icon' %>
+                </div>
+                <div class='col-7 dm-index-right'>
+                  <div class='row center border-bottom dm-index-target'>
+                    <i class="fa fa-user-o"></i><span class='space'><%= conversation.target_user(current_user).name %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div class='row pagenate-content'>
+    <%= paginate(@conversations) %>
+  </div>
 </div>
+</div>
+

@@ -3,22 +3,39 @@
   width: auto;
   height: 100%;
   flex-direction: column;
-}
+ }
+
+ .center {
+  
+   justify-content: center;
+   margin-bottom: 5px;
+ }
 
 .conversations-h2 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.message_container {
+  margin-top: 50px;
 }
 
 .table {
   display: flex;
   flex-direction: column;
-
-}
-.fff {
+  margin-bottom: 0;
 }
 
 .ggg {
   display: flex;
   flex-direction: column;
   background-color: darkmagenta;
+}
+
+.conversations_inner {
+  margin: 0 auto;
+}
+
+.conv {
+  margin-top: 5%;
 }

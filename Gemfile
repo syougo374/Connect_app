@@ -24,6 +24,7 @@ group :development do
   gem 'letter_opener_web'
 end
 
+
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

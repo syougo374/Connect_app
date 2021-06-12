@@ -159,9 +159,15 @@ h1 {
 }
 
 .user_icon img {
-  width: 200px;
-  height: 200px;
+  width: 20%;
+  height: auto;
   border-radius: 50%;
+}
+
+.show_content_area img{
+  width: 20%;
+  height: 20%;
+  border-radius: 20px;
 }
 
 .icon_box {

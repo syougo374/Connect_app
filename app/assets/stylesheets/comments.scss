@@ -2,3 +2,27 @@
   display: flex;
   display: block;
 }
+
+.show_comments {
+  width: 100%;
+  margin-top: 0;
+  overflow: scroll;
+  max-height: 10%;
+  flex-direction: column;
+  word-wrap:break-word;
+}
+
+.comment_list {
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+}
+
+.edit_delete {
+  display: flex;
+}
+
+.edit_delete p{
+  display: flex;
+  margin-left: 5px;
+}

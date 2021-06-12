@@ -17,7 +17,7 @@
 		</div>
 		</div>
 	</div>
-	<div class="show_content">
+	<div class="message_area">
 			<% if user_signed_in? %>
 				<!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
 				<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>

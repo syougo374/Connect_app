@@ -32,6 +32,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
 gem 'devise'
 gem 'rails-i18n', '~> 5.1'
 gem 'cancancan'
@@ -41,6 +42,7 @@ gem 'mimemagic'
 gem 'dotenv-rails'
 gem 'geocoder'
 gem "gmaps4rails"
+gem 'jquery-ui-rails'
 
 gem 'bcrypt'
 gem 'kaminari'
@@ -53,9 +55,9 @@ gem 'ransack'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # rspec
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'launchy'
-  gem 'webdrivers'
+gem 'rspec-rails'
+gem 'spring-commands-rspec'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'launchy'
+gem 'webdrivers'

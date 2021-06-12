@@ -59,6 +59,7 @@ class PostsController < ApplicationController
 
   private
   def set_post
+    # binding.irb
     @post = Post.find(params[:id])
   end
 

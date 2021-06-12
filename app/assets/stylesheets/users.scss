@@ -129,11 +129,22 @@ h1 {
   padding-left: 3px;
 }
 
+.follow_box a{
+  padding-right: 10px;
+}
+
 .user_point_index img{
   text-align: center;
 }
-.follow_box a{
- padding-right: 10px;
+.user_show_box {
+  flex-direction: column;
+  display: flex;
+  margin:auto 0;
+}
+
+.user_show_inner {
+  display: flex;
+  justify-content: center;
 }
 
 .my_show {

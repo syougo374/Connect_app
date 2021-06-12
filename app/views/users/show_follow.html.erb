@@ -1,9 +1,29 @@
 <%= render'application/sidebar' %>
-
-<p>フォロワー一覧</p>
-<% @users.each do |user| %>
-<div class = "follow_box">
-  <%= image_tag(@user.image.to_s) %>
-  <%= user.name %>
-</div>
-<% end %>
+<div class="follower_container">
+  <div class="follower_inner">
+    <h3>フォロー一覧</h3>
+      <div class='row mt-4'>
+        <% @users.each do |follower| %>
+          <div class='col-md-5 offset-md-1 col-10 offset-1 border rounded-lg my-2 pt-1 posts ga'>
+            <%= link_to user_path(follower) do %>
+              <div class='row row-height'>
+                <div class='col-5'>
+                  <%= image_tag follower.image.thumb100.url, class:'img-fluid d-flex img-thumbnail middle-icon history-index-img' %>
+                </div>
+                <div class='col-7'>
+                  <div class='row border-bottom follow-index-user'>
+                    <i class="fa fa-user-o"></i><span class='space'><p><%= follower.name %></p>
+                  </div>
+                  <div class='row follow-index-content'>
+                </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='row pagenate-content'>
+      <%#= paginate @followers %>
+    </div>
+  </div>

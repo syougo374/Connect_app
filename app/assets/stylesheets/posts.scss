@@ -43,7 +43,7 @@ a {
   flex-direction: column;
   margin-top: 10px;
   width: 400px;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .index_container a{
@@ -173,10 +173,12 @@ a {
   width: 40%;
   height: auto;
   border-radius: 50px;
-  
 }
-
 
 .show_content_area form{
   display: flex;
+}
+
+.ga {
+  margin-left: 5%;
 }

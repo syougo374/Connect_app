@@ -34,6 +34,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    # binding.irb
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|

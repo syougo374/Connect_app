@@ -3,7 +3,13 @@
   width: auto;
   height: 100%;
   flex-direction: column;
-}
+ }
+
+ .center {
+  
+   justify-content: center;
+   margin-bottom: 5px;
+ }
 
 .conversations-h2 {
   text-align: center;
@@ -28,4 +34,8 @@
 
 .conversations_inner {
   margin: 0 auto;
+}
+
+.text-center {
+  margin-top: 5%;
 }

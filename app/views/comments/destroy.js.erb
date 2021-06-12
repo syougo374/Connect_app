@@ -1,2 +1,6 @@
 $("#this_comment_<%= @comment.id %>").replaceWith("<%= j render 'comments/destroy', post: @post, comment: @comment %>");
 $("#notice").html("<%= j flash[:notice] %>");
+
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.post.comments, post: @comment.post }) %>");
+$("textarea").val('');
+$("#notice").html("<%= j flash[:notice] %>");

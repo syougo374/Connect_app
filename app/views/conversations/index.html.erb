@@ -2,7 +2,7 @@
 <%= render'application/sidebar' %>
 <div class='container'>
 <div class="conversation_container">
-  <h3 class='text-center'><i class="fa fa-comments" aria-hidden="true"></i><span class='small-space'>DM一覧</h3>
+  <h3 class='text-center'><i class="fa fa-comments" aria-hidden="true"></i><span class='small-space'>メッセージ一覧</h3>
   <div class='container-fulid'>
   <div class='conversations_inner'>
 
@@ -11,12 +11,12 @@
         <% if conversation.target_user(current_user).present? %>
           <div class='col-md-5 offset-md-1 border rounded-lg my-2 pt-1 posts'>
             <%= link_to conversation_messages_path(conversation) do%>
-              <div class='row dm-index-row'>
+              <div class='row center dm-index-row'>
                 <div clsss='col-5 dm-index-left'>
                   <%= image_tag conversation.target_user(current_user).image.thumb100.url, class:'img-fluid img-thumbnail icon' %>
                 </div>
                 <div class='col-7 dm-index-right'>
-                  <div class='row border-bottom dm-index-target'>
+                  <div class='row center border-bottom dm-index-target'>
                     <i class="fa fa-user-o"></i><span class='space'><%= conversation.target_user(current_user).name %>
                   </div>
                 </div>

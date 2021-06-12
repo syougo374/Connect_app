@@ -2,6 +2,7 @@
 <div class = "index_container ">
 	<div class = 'icon_box post_show'>
 		<div class ='user_icon'>
+		  <h3>投稿詳細</h3>
 			<%= image_tag(@post.user.image.to_s) %>
 			<%=link_to "ユーザー名:#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
 		</div>
@@ -41,11 +42,11 @@
 				<% end %>
 			<% end %>
 			<% end %>
+		</div>
+	</div>
 			<div class="map_area">
 				<%= render 'map' %>
 			</div>
-		</div>
-	</div>
 </div>
 
 

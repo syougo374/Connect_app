@@ -20,6 +20,22 @@
 }
 
 
+.message-list {
+
+}
+
+.message {
+  // max-width: 80%;
+  margin: 0;
+  width:45%;
+  height:96px;
+  display: block;
+}
+.message .link {
+  height: 100%;
+  width: 100%;
+}
+
 .segment  {
   background-color: rgb(221, 255, 255);
 }

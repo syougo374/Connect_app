@@ -30,6 +30,7 @@
 				<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 			<% end %>
   	</div>
+		  <%= render 'map' %>
 
 		<div class="btn_edit">
 			<% if current_user.id == @post.user.id %>

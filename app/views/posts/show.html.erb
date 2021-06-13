@@ -8,15 +8,19 @@
 		  <h3>投稿詳細</h3>
 			<%= image_tag(@post.user.image.to_s) %>
 			<%=link_to "ユーザー名:#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
-		<div class="show_content_area">
-			<%= image_tag(@post.image.to_s) %><br>
+		</div>
+		<div class="show_content_area row">
+			<div class="col-6"><%= image_tag(@post.image.to_s) %></div><br>
+			<div class="content_sub col-2">
+			<%= "タイトル:#{@post.title}" %><br>
+			<%= "内容:#{@post.content}" %><br>
+				</div>
 			<div class="show_comments">
 				<div id="comments_area"><!-- #① -->
-				<h4>コメント</h4>
+					<h4>コメント</h4>
 					<!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
 					<%= render partial: 'comments/index', locals: { comments: @comments } %>
 				</div>
-			</div>
 		</div>
 		</div>
 	</div>
@@ -26,8 +30,7 @@
 				<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 			<% end %>
   	</div>
-		<%= "タイトル:#{@post.title}" %><br>
-		<%= "内容:#{@post.content}" %><br>
+
 		<div class="btn_edit">
 			<% if current_user.id == @post.user.id %>
 				<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
@@ -47,9 +50,7 @@
 			<% end %>
 		</div>
 	</div>
-			<div class="map_area">
-				<%= render 'map' %>
-			</div>
+
 </div>
 
 

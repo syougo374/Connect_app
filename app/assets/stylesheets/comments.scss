@@ -10,6 +10,7 @@
   max-height: 10%;
   flex-direction: column;
   word-wrap:break-word;
+  text-align: center;
 }
 
 .comment_list {
@@ -25,4 +26,8 @@
 .edit_delete p{
   display: flex;
   margin-left: 5px;
+}
+
+.comment-content {
+
 }

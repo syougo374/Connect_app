@@ -1,9 +1,23 @@
-<div class= "content_index">
-<div class= "content_inner">
+<%# <div class= "content_index">
+<div class= "content_inner"> %>
+<div class ="box session_show_center">
+  <div class ="box-inner">
+  <div class ="session-inner">
+
 <h2><%= t('.title', resource: resource.model_name.human) %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :ニックネーム %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :アイコン %><br />
+    <%= f.file_field :image, autofocus: true, autocomplete: "imgae" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -43,3 +57,6 @@
 <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
 <%= link_to 'トップページ', posts_path %>
+</div>
+</div>
+</div>

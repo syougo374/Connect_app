@@ -46,8 +46,11 @@
   width: 70%;
 }
 
-.new_user {
+.new_user1 {
   margin: 20px 0;
+  border: solid;
+  border-color: black;
+  padding: 5%;
 }
 .new_user a{
   margin: 20px 0;
@@ -184,4 +187,21 @@ h1 {
 
 .text-break {
   text-align: left;
+}
+
+.box-inner h2 {
+  text-align: center;
+}
+
+.box {
+  padding-top: 5%;
+}
+
+[type=submit]:not(:disabled), button:not(:disabled) {
+  margin: 5% 0;
+}
+
+
+.box-name input[type="text"], .box-name input[type="text"] {
+  width: 100%;
 }

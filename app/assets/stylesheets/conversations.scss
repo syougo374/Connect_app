@@ -1,12 +1,22 @@
 .conversation_container {
   display: flex;
-  width: auto;
   height: 100%;
   flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+ }
+
+ .session_show_center {
+   text-align: center;
+   height: 100%;
+ }
+ 
+ .box-inner h2 {
+   font-size: 1.8rem;
  }
 
  .center {
-  
    justify-content: center;
    margin-bottom: 5px;
  }

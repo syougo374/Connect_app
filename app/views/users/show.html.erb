@@ -30,9 +30,9 @@
           <div class = 'index_container alert alert-info'>
             <p><%= image_tag(user.image.to_s )%></p>
               <ul class = "sid_content">
-                <li class="text-break"><%= user.title %></li>
-                <li class="text-break"><%= user.content %></li>
-                <li class="text-break"><%= user.address %></li>
+                <li class="text-break"><span class="color">タイトル:</span><br><%= user.title %></li>
+                <li class="text-break"><span class="color">内容:</span><br><%= user.content %></li>
+                <li class="text-break"><span class="color">住所:</span><br><%= user.address %></li>
             </ul>
           </div>
         <% end %>

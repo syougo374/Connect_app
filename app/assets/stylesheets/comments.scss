@@ -3,13 +3,19 @@
   display: block;
 }
 
+.comment_edit_btn {
+  display: flex;
+  
+}
+
 .show_comments {
-  width: 100%;
   margin-top: 0;
   overflow: scroll;
-  max-height: 10%;
+  max-height: 100%;
   flex-direction: column;
   word-wrap:break-word;
+  max-width: 90%;
+  margin-left: 15px;
 }
 
 .comment_list {
@@ -25,4 +31,9 @@
 .edit_delete p{
   display: flex;
   margin-left: 5px;
+}
+
+.comment-content a {
+  color: red;
+
 }

@@ -5,7 +5,7 @@
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
       <h3>みんなの投稿一覧</h3>
-    <div class="search_box">
+    <div class="user_icon_box">
       <%= search_form_for @q, url: search_posts_path do |f| %>
         <ul class ="ulul">
           <li><%= f.label :address_cont, '住所' %></li>
@@ -22,9 +22,10 @@
           <div class ="index_container alert alert-info ">
             <p><%= image_tag(post.image.to_s) %></p>
             <ul class = "sid_content">
-              <li class="text-break">タイトル:<%= post.title %></li>
-              <li class="text-break"><%= "コンテント:#{post.content}" %></li>
-              <li class="text-break"><%= "住所:#{post.address}" %></li>
+              <li class="text-break"><span class="color">ユーザー名:</span><br><%= post.user.name %></li>
+              <li class="text-break"><span class="color">タイトル:</span><br><%= post.title %></li>
+              <li class="text-break"><span class="color">内容:</span><br><%= post.content %></li>
+              <li class="text-break"><span class="color">住所:</span><br><%= post.address %></li>
             </ul>
           </div>
         <% end %>
@@ -32,4 +33,3 @@
     </div>
   </div>
 </div>
-

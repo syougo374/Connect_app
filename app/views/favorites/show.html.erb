@@ -14,8 +14,10 @@
           <div class ="index_container alert alert-info">
             <p><%= image_tag(favorite.post.image.to_s) %></p>
             <ul class = "sid_content">
-              <li  class="text-break"><%= favorite.user.name %></li>
-              <li  class="text-break"><%= favorite.post.title %></li>
+              <li  class="text-break"><span class="color">ユーザー名:</span><br><%= favorite.user.name %></li>
+              <li  class="text-break"><span class="color">タイトル:</span><br><%= favorite.post.title %></li>
+              <li  class="text-break"><span class="color">内容:</span><br><%= favorite.post.content %></li>
+              <li  class="text-break"><span class="color">住所:</span><br><%= favorite.post.address %></li>
             </ul>
           </div>
         <% end %>
@@ -23,3 +25,5 @@
     </div>
   </div>
 </div>
+
+

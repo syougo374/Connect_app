@@ -4,10 +4,65 @@
   border-radius: 50px;
 }
 
+.dots {
+  border-width: 0 0 8px;
+  border-style: solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 65%, 1.0)" cx="1" cy="0.5" r="0.5"/></svg>') 0 0 100% repeat;
+   width: 80%
+}
+
+.map {
+  width: 100%;
+  height: auto;
+}
+
+.post_show_content {
+  display: flex;
+  margin: 30px auto;
+  padding-left: 20px;
+}
+
+.post_show_content img {
+  width: 25%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.post_content {
+  margin: auto 0 auto 10px;
+  width: 50%;
+}
+// .i {
+//   margin-left: 20px;
+// }
+
+.post_show_container {
+  width: 100%;
+}
+
+.post_icon_box img {
+  width: 15%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.post_icon_box {
+  text-align: center;
+  padding-top: 20px;
+}
+
 .new_post {
   display: flex;
 }
 
+.post_show_inner {
+  height: 100%;
+}
+
+.post_show_container {
+  width: 100%;
+  height: 100%;
+}
 
 .content_index {
   height: 100%;
@@ -38,9 +93,13 @@ a {
   padding-left: 20px;
 }
 
+.color {
+  color: rgba(144, 107, 107, 0.941);
+}
+
 .index_container  {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   margin-top: 10px;
   width: 90%;
   margin: 15px auto;
@@ -48,7 +107,7 @@ a {
 
 .index_container a{
   display: flex;
-  width: 100%;
+  // width: 100%;
   margin: 10px 10% 10px 0%;
   // width:70%; border:1px solid #ccc; background-color:#ddeeff;
   // word-wrap:break-all;
@@ -61,7 +120,7 @@ a {
 .content_target {
   margin-top: 0;
   overflow: scroll;
-  max-height: 70%;
+  max-height: 75%;
   flex-direction: column;
   word-wrap:break-word;
   // display: flex;
@@ -116,7 +175,9 @@ a {
 .search_box h3 {
   margin-bottom: 40px;
   width: 50%;
+  margin: 5% auto;
 }
+
 
 .new_post_h1 {
   margin-top: 15px;
@@ -127,10 +188,6 @@ a {
   margin-bottom: 20px;
   padding-top: 20px;
   width: 100%;
-}
-
-.box-inner {
-  margin: 50px;
 }
 
 .new_posts {
@@ -152,6 +209,15 @@ a {
   overflow: scroll;
   word-wrap : break-word;
   overflow-wrap : break-word;
+}
+
+.user_icon_box{
+  width: 100%;
+}
+
+.icon {
+  width:20%;
+  height: auto;
 }
 
 .icon_box  {
@@ -182,4 +248,21 @@ a {
 
 .ga {
   margin-left: 5%;
+}
+
+.map_comment {
+  display: flex;
+  width: 80%;
+  height: 30%;
+}
+
+.show_container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.comment-content p{
+  width: 100%;
 }

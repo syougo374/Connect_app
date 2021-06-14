@@ -6,6 +6,7 @@
 		<%= image_tag(@post.user.image.to_s) %><br>
 		<span class="color">投稿者</span><br>
 		<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
+		<p class="notice"><%= notice %></p>
 	</div>
 	<hr class="dots">
 	<div class="post_show_content">

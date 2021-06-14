@@ -16,21 +16,17 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, notice: '新規投稿しました'
     else
-      render 'new'
+      render 'new', notice: '投稿に失敗しました'
     end
   end
 
   def edit
-
   end
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
-    # @post = Post.find(params[:id])
-    # @comment = Comment.new #①
-    # @comments = @post.comments #②
     @comments = @post.comments
     @comment = @post.comments.build
   end
@@ -38,8 +34,8 @@ class PostsController < ApplicationController
   def update
     if @post.user.id == current_user.id
       @post.update(post_params)
-      redirect_to posts_path
-      flash[:success] = "Profile has been successfully updated!"
+      redirect_to post_path(@post), notice: '投稿を編集しました'
+      # flash[:success] = "Profile has been successfully updated!"
     else
       render 'edit'
     end
@@ -48,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     if @post.user.id == current_user.id
       @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path, notice: '投稿を削除しました'
     else
       render "edit"
     end

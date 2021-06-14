@@ -6,6 +6,10 @@ class Post < ApplicationRecord
   has_many :favorites_users, through: :favorites, source: :user
   scope :search_address, -> (search_address) {where("title LIKE ?", "%#{search_title}%") }
 
+  validates :content, presence: true, length:{ maximum: 255 }
+  validates :title, presence: true, length:{ maximum: 30 }
+  validates :address, presence:true
+
   #--google_map
   validates :address, presence: true
   geocoded_by :address

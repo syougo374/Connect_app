@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.posts.all.order(created_at: :desc).page(params[:page]).per(3)
   end
+
   def followers
     @user = User.find(params[:id])
     @users = @user.followers

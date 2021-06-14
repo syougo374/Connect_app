@@ -11,7 +11,7 @@
   <% end %>
   <div class="field form_point">
     <%= form.label :content %><br>
-    <%= form.text_area :content,placeholder: "コメントを255文字以内で送ってみよう" %>
+    <span class="text-break"><%= form.text_area :content,placeholder: "コメントを255文字以内で送ってみよう" %></span>
   </div>
   <div class="actions">
     <%= form.submit %>

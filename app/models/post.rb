@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   validates :content, presence: true, length:{ maximum: 255 }
   validates :title, presence: true, length:{ maximum: 30 }
-  validates :address, presence:true
+  validates :address, presence:true, length:{ maximum: 50}
 
   #--google_map
   validates :address, presence: true

@@ -197,8 +197,9 @@ h1 {
   padding-top: 5%;
 }
 
-
-
+[type=submit]:not(:disabled), button:not(:disabled) {
+  margin: 5% 0;
+}
 
 
 .box-name input[type="text"], .box-name input[type="text"] {

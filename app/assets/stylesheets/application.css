@@ -32,3 +32,6 @@
   border-radius: 15px;    /*角を丸くする*/
 }
  
+.notice {
+  display: flex;
+}

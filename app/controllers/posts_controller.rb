@@ -35,7 +35,6 @@ class PostsController < ApplicationController
     if @post.user.id == current_user.id
       @post.update(post_params)
       redirect_to post_path(@post), notice: '投稿を編集しました'
-      # flash[:success] = "Profile has been successfully updated!"
     else
       render 'edit'
     end
@@ -57,7 +56,6 @@ class PostsController < ApplicationController
 
   private
   def set_post
-    # binding.irb
     @post = Post.find(params[:id])
   end
 

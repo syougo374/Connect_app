@@ -3,6 +3,8 @@ ja:
     models:
       post: 投稿
       user: ユーザー
+      comment: コメント
+      message: メッセージ
     attributes:
       post:
         title: タイトル
@@ -17,3 +19,8 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
+      comment:
+        content: コメント
+      message:
+        read: 既読
+        body: 本文

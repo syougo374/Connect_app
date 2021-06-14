@@ -6,6 +6,7 @@ RSpec.describe 'タスク管理機能', type: :system do
   let!(:post2) {FactoryBot.create(:post, user: user2)}
   before do
     visit root_path
+    # visit root_path
     click_link 'ログイン'
     fill_in 'user[email]',with: 'syougo@docomo.ne.jp'
     fill_in 'user[password]',with: 'password'

@@ -26,7 +26,7 @@ end
 
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  # gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
 end
@@ -56,9 +56,10 @@ gem 'ransack'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # rspec
-gem 'rspec-rails'
-gem 'spring-commands-rspec'
-gem 'factory_bot_rails'
-gem 'faker'
-gem 'launchy'
-gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'capybara', '>= 2.15'
+  gem 'webdrivers'

@@ -2,20 +2,20 @@ require 'rails_helper'
 RSpec.describe 'タスク管理機能', type: :system do
   let!(:user) {FactoryBot.create(:user)}
   let!(:user2) {FactoryBot.create(:user2)}
-
+  let!(:post) {FactoryBot.create(:post, user: user)}
+  let!(:post2) {FactoryBot.create(:post, user: user2)}
   before do
-    FactoryBot.create(:post,user: user)
-    FactoryBot.create(:post2,user: user2)
-    visit new_user_session_path
+    visit root_path
+    click_link 'ログイン'
     fill_in 'user[email]',with: 'syougo@docomo.ne.jp'
     fill_in 'user[password]',with: 'password'
     click_button 'commit'
   end
-
   describe '新規作成機能' do
     context 'タスクを新規作成した場合' do
       it '作成したタスクが表示される' do
         # binding.irb
+        # visit new_user_session_path
         click_link '新規投稿'
         fill_in 'post[title]',with: '確認用タイトル'
         fill_in 'post[content]', with: '確認用コンテント'
@@ -38,7 +38,7 @@ RSpec.describe 'タスク管理機能', type: :system do
   describe 'お気に入り登録機能' do
     context 'お気に入りした場合' do
       it 'お気に入り一覧に表示される' do
-        binding.irb
+        # binding.irb
 
         # click_link 'スカイツリー'
         # click_link ''

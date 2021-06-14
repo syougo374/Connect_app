@@ -14,6 +14,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :development do
@@ -26,9 +31,10 @@ end
 
 
 group :test do
-  # gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -56,10 +62,3 @@ gem 'ransack'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # rspec
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'launchy'
-  gem 'capybara', '>= 2.15'
-  gem 'webdrivers'

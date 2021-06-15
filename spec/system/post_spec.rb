@@ -4,7 +4,7 @@ RSpec.describe '投稿管理機能', type: :system do
   let!(:user2) {FactoryBot.create(:user2)}
   let!(:post) {FactoryBot.create(:post, user: user)}
   let!(:post2) {FactoryBot.create(:post2, user: user2)}
-  let!(:post3) {Post.create(title: '北海道',content: 'コンテント', address: '熊本県天草市' ,user_id: user2.id)} 
+  let!(:post3) {Post.create(title: '北海道',content: 'コンテント', address: '熊本県天草市' ,user_id: user2.id)}
   let!(:favorite){FactoryBot.create(:favorite, post_id: post3.id, user_id: user.id)}
 
   before do
@@ -65,10 +65,8 @@ RSpec.describe '投稿管理機能', type: :system do
         click_on 'Myプロフィール'
         find(".sid_content").click
         click_link '投稿編集'
-        # binding.irb
         expect(page).to have_content "投稿編集画面"
         fill_in "post[title]", with: '編集しましたよ'
-        # wait = Selenium::WebDriver::Wait.new(:timeout => 20) 
         click_on 'commit'
         sleep(0.5)
         expect(page).to have_content "投稿詳細"

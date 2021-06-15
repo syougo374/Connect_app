@@ -24,11 +24,11 @@
 			<% unless @post.user_id == current_user.id %>
 				<% if @favorite.present? %>
 					<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
-						<span class="fa fa-heart like-btn-unlike"></span>
+						<span id="favorite" class="fa fa-heart like-btn-unlike"></span>
 					<% end %>
 				<% else %>
 					<%= link_to("/favorites/#{@post.id}/create", {method: "post"}) do %>
-					<span class="fa fa-heart like-btn"></span>
+					<span id="favorite" class="fa fa-heart like-btn"></span>
 					<% end %>
 				<% end %>
 			<% end %>

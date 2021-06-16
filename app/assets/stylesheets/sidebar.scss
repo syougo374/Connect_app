@@ -44,8 +44,12 @@
   padding-top: 10px;
   position: sticky;
   // top: 15%;
+  // margin-left: 1rem;
+  overflow: scroll;
+  height: 100vh; 
+  // width: 100%;
   min-height: 100vh;
-  height: 100%;
+  // height: 100%;
   width: 20%;
   float: left;
   color: #162407;

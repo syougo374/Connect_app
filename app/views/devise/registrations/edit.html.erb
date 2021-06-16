@@ -46,17 +46,12 @@
     <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-<br><br>
+
   <div class="actions ">
     <%= f.submit t('.update') %>
   </div>
 <% end %>
-
-<h3><%= t('.cancel_my_account') %></h3>
-
-<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
-
-<%= link_to 'トップページ', posts_path %>
+<%= link_to 'ホームへ', posts_path,class:"btn btn-outline-success btn-block" %>
 </div>
 </div>
 </div>

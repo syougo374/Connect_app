@@ -5,13 +5,15 @@
     <h3>検索結果</h3>
     <% @results.each do |results| %>
     <div class = "index_container alert alert-info">
-      <p><%= image_tag(results.image.to_s) %></p>
-        <div class = "sid_content">
-          <p><%= results.title %></p>
-          <p><%= results.content %></p>
-          <p><%= results.user.name %></p>
+      <%= link_to post_path(results), class:' post-color','data-turbolinks': false do %>
+        <p><%= image_tag(results.image.to_s) %></p>
+          <div class = "sid_content">
+            <p><%= results.title %></p>
+            <p><%= results.content %></p>
+            <p><%= results.user.name %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

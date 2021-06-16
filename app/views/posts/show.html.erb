@@ -2,6 +2,7 @@
 <div class="post_show_container">
  <div class="post_show_inner">
 	<div class="post_icon_box">
+		<p class="notice"><%= notice %></p>
 		<h3>投稿詳細</h3>
 		<%= image_tag(@post.user.image.to_s) %><br>
 		<span class="color">投稿者</span><br>
@@ -23,11 +24,11 @@
 			<% unless @post.user_id == current_user.id %>
 				<% if @favorite.present? %>
 					<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
-						<span class="fa fa-heart like-btn-unlike"></span>
+						<span id="unfavorite" class="fa fa-heart like-btn-unlike"></span>
 					<% end %>
 				<% else %>
 					<%= link_to("/favorites/#{@post.id}/create", {method: "post"}) do %>
-					<span class="fa fa-heart like-btn"></span>
+					<span id="favorite" class="fa fa-heart like-btn"></span>
 					<% end %>
 				<% end %>
 			<% end %>

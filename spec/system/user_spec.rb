@@ -48,7 +48,6 @@ RSpec.describe 'User関連機能',type: :system do
       context 'ログアウトした場合' do
         it  'トップページに戻りログイン状態が解除される' do
           visit root_path
-          binding.irb
           find("#log_in").click
           fill_in 'user[email]',with: 'syougo@docomo.ne.jp'
           fill_in 'user[password]', with: 'password'

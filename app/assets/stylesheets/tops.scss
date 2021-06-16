@@ -1,16 +1,16 @@
 html {
-  // font-size: 62.5%;
   height: 100%;
 }
 
 body{
   height: 100%;
+
   background-color: rgb(255, 228, 228);
   background-image: image-url("watermark.jpeg");
   // background-repeat: no-repeat;
   background-position: center center;
   background-size:cover;
-  }
+ }
 
 .layer {
   position: relative;
@@ -107,6 +107,8 @@ body{
   padding: 0;
   background-color: #fff;
   width: 70%;
+  // overflow: scroll;
+  height: 100vh; 
 }
 
 

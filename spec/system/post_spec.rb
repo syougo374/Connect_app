@@ -1,11 +1,13 @@
 require 'rails_helper'
 RSpec.describe '投稿管理機能', type: :system do
-  let!(:user) {FactoryBot.create(:user)}
-  let!(:user2) {FactoryBot.create(:user2)}
-  let!(:post) {FactoryBot.create(:post, user: user)}
-  let!(:post2) {FactoryBot.create(:post2, user: user2)}
-  let!(:post3) {Post.create(title: '北海道',content: 'コンテント', address: '熊本県天草市' ,user_id: user2.id)}
-  let!(:favorite){FactoryBot.create(:favorite, post_id: post3.id, user_id: user.id)}
+  # let!(:user) {create(:user)}
+  # let!(:user2) {create(:user2)}
+  let!(:post) {create(:post)}
+  let!(:post2) {create(:post2)}
+  let!(:post3) {create(:post3)}
+  let!(:favorite){create(:favorite)}
+  # let!(:post3) {Post.create(title: '北海道',content: 'コンテント', address: '熊本県天草市' ,user_id: user2.id)}
+  # let!(:favorite){create(:favorite, post_id: post3.id, user_id: user.id)}
 
   before do
     visit root_path

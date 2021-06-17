@@ -53,6 +53,8 @@ Connect
 
 ### カリキュラム外の技術
 - Vue.js
+    ↓変更（斉藤メンターより承認頂きました。）
+- geocoder
 
 ### 使用予定Gem
 - mini_magick

@@ -1,9 +1,10 @@
 require 'rails_helper'
 RSpec.describe '投稿管理機能', type: :system do
-  let!(:post) {create(:post)}
+  let!(:user) {create(:user)}
+  let!(:post) {create(:post,user_id: user.id)}
   let!(:post2) {create(:post2)}
   let!(:post3) {create(:post3)}
-  let!(:favorite){create(:favorite)}
+  let!(:favorite){create(:favorite,post_id: post3.id, user_id: user.id)}
 
   before do
     visit root_path

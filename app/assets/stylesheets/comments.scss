@@ -10,10 +10,10 @@
 .show_comments {
   margin-top: 0;
   overflow: scroll;
-  max-height: 100%;
+  max-height: 40%;
   flex-direction: column;
   word-wrap:break-word;
-  max-width: 90%;
+  max-width: 100%;
   margin-left: 15px;
 }
 
@@ -34,5 +34,9 @@
 
 .comment-content a {
   color: red;
+
+}
+
+.gm-style-pbc {
 
 }

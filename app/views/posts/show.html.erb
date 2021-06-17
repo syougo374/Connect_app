@@ -9,48 +9,47 @@
 		<%=link_to "#{@post.user.name}", user_path(@post.user.id), class:'user_show_page' %>
 	</div>
 	<hr class="dots">
-	<div class="post_show_content">
-		<%= image_tag(@post.image.to_s) %>
-		<div class="post_content">
-			<span class="color text-break">タイトル:</span><span class="text-break"><%= @post.title %></span><br><br>
-			<span class="color">内容:</span><span class="text-break"><%= @post.content %><br><br></span>
-			<span class="color">住所:</span><span class="text-break"><%= @post.address %><br><br></span>
+	<div class="content_post_show">
+		<div class="post_show_content">
+			<%= image_tag(@post.image.to_s) %>
+			<div class="post_content">
+				<span class="color text-break">タイトル:</span><span class="text-break"><%= @post.title %></span><br><br>
+				<span class="color">内容:</span><span class="text-break"><%= @post.content %><br><br></span>
+				<span class="color">住所:</span><span class="text-break"><%= @post.address %><br><br></span>
 
-			<% if current_user.id == @post.user.id %>
-			<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
-			<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
-			<% end %>
+				<% if current_user.id == @post.user.id %>
+				<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
+				<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
+				<% end %>
 
-			<% unless @post.user_id == current_user.id %>
-				<% if @favorite.present? %>
-					<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
-						<span id="unfavorite" class="fa fa-heart like-btn-unlike"></span>
-					<% end %>
-				<% else %>
-					<%= link_to("/favorites/#{@post.id}/create", {method: "post"}) do %>
-					<span id="favorite" class="fa fa-heart like-btn"></span>
+				<% unless @post.user_id == current_user.id %>
+					<% if @favorite.present? %>
+						<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
+							<span id="unfavorite" class="fa fa-heart like-btn-unlike"></span>
+						<% end %>
+					<% else %>
+						<%= link_to("/favorites/#{@post.id}/create", {method: "post"}) do %>
+						<span id="favorite" class="fa fa-heart like-btn"></span>
+						<% end %>
 					<% end %>
 				<% end %>
-			<% end %>
-		</div>
-	</div>
-	<div class="map_comment">
-		<%= render 'map' %>
-		<div class="show_container">
-			<h4>コメント</h4>
-			<div class="show_comments">
-
-			<div id="comments_area"><!-- #① -->
-				<!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-				<%= render partial: 'comments/index', locals: { comments: @comments } %>
 			</div>
 		</div>
-		<div class="message_area">
-			<% if user_signed_in? %>
-				<!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-			<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-			<% end %>
-		</div>
+		<div class="map_comment">
+			<%= render 'map' %>
+			<div class="show_container">
+				<h4>コメント</h4>
+				<div class="show_comments">
+				<div id="comments_area">
+					<%= render partial: 'comments/index', locals: { comments: @comments } %>
+				</div>
+			</div>
+			<div class="message_area">
+				<% if user_signed_in? %>
+				<%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+				<% end %>
+			</div>
+			</div>
 		</div>
 	</div>
 </div>

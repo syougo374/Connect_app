@@ -11,13 +11,12 @@ RSpec.describe 'gest_login', type: :system do
       end
     end
   end
-    context 'サインアップ画面のゲストログインボタンから,' do
-      it 'ゲストユーザーログインできる' do
-        visit root_path
-        find('#sign_up').click
-        click_link 'ゲストログイン（閲覧用）'
-        expect(page).to have_content 'ゲストユーザーとしてログインしました。'
-      end
+  context 'サインアップ画面のゲストログインボタンから,' do
+    it 'ゲストユーザーログインできる' do
+      visit root_path
+      find('#sign_up').click
+      click_link 'ゲストログイン（閲覧用）'
+      expect(page).to have_content 'ゲストユーザーとしてログインしました。'
     end
   end
 end

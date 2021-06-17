@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe '投稿モデル機能', type: :model do
   let!(:user) {create(:user)}
-  let!(:post) {create(:post, user: user)}
+  let!(:post) {create(:post, user_id: user.id)}
 
   describe 'バリデーションテスト' do
     context 'タイトルの入力が正しい場合' do

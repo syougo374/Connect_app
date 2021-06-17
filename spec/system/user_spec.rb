@@ -20,8 +20,11 @@ RSpec.describe 'User関連機能',type: :system do
     end
     context '入力漏れが合った場合' do
       it 'サインアップできない' do
+        find("#sign_up").click
         click_button 'commit'
-        expect(current_path).to have_content '/users/sign_up'
+        expect(page).to have_content "ニックネームを入力してください"
+        expect(page).to have_content "メールアドレスを入力してください"
+        expect(page).to have_content "パスワードを入力してください"
       end
     end
     context '全ての記述が正しい場合' do

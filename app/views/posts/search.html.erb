@@ -8,9 +8,10 @@
       <%= link_to post_path(results), class:' post-color','data-turbolinks': false do %>
         <p><%= image_tag(results.image.to_s) %></p>
           <div class = "sid_content">
-            <p><%= results.title %></p>
-            <p><%= results.content %></p>
-            <p><%= results.user.name %></p>
+            <p>投稿者:<%= results.user.name %></p>
+            <p>タイトル:<%= results.title %></p>
+            <p>内容:<%= results.content %></p>
+            <p>住所:<%= results.address %></p>
           </div>
         </div>
       <% end %>

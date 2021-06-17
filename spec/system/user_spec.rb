@@ -13,6 +13,7 @@ RSpec.describe 'User関連機能',type: :system do
         fill_in "user[email]", with: "test@syougo.com"
         fill_in "user[password]", with: "password"
         fill_in "user[password_confirmation]", with: "password"
+        sleep(0.5)
         click_button 'commit'
         expect(page).to have_content 'みんなの投稿一覧'
         expect(page).to have_content 'アカウント登録が完了しました。'

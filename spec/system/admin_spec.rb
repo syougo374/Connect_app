@@ -11,6 +11,7 @@ RSpec.describe 'Admin', type: :system do
         find("#log_in").click
         fill_in 'user[email]',with: 'syougo@docomo.ne.jp'
         fill_in 'user[password]', with: 'password'
+        sleep(0.5)
         click_button 'commit'
         expect(page).to have_content 'みんなの投稿一覧'
         expect(page).to have_content 'ログインしました。'

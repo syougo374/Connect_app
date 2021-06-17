@@ -22,11 +22,12 @@ RSpec.describe '投稿管理機能', type: :system do
         fill_in 'post[title]',with: '確認用タイトル'
         fill_in 'post[content]', with: '確認用コンテント'
         fill_in 'post[address]', with: '確認用住所'
-        click_button 'commit'
         sleep(0.5)
+        click_button 'commit'
         expect(page).to have_content '確認用タイトル'
         expect(page).to have_content '確認用コンテント'
         expect(page).to have_content '確認用住所'
+        sleep(0.5)
       end
     end
     context 'タスク作成に失敗した場合' do
@@ -82,6 +83,16 @@ RSpec.describe '投稿管理機能', type: :system do
         page.driver.browser.switch_to.alert.accept
         click_on 'Myプロフィール'
         expect(page).not_to have_content '阿蘇山'
+      end
+    end
+  end
+  describe '住所検索機能' do
+    context '住所検索した場合' do
+      it '該当の投稿が表示される' do
+        fill_in "q[address_cont]" ,with: '熊本県'
+        click_button 'commit'
+        expect(page).to have_content '検索結果'
+        expect(page).to have_content '熊本県天草市'
       end
     end
   end

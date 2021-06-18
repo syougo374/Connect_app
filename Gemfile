@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem 'mimemagic'
 gem 'dotenv-rails'
 gem 'geocoder'
+gem 'gon'
 gem "gmaps4rails"
 gem 'jquery-ui-rails'
 

@@ -1,19 +1,17 @@
-<div class = "new_post">
 <%= render'application/sidebar' %>
-
-<div class = "new_posts">
-<% if @post.errors.any? %>
-  <div>
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+<div class = "new_post">
+  <div class = "new_posts">
+    <% if @post.errors.any? %>
+      <div>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h1 class = 'new_post_h1'>新規投稿</h1>
+    <p class="notice"><%= notice %></p>
+    <%= render 'form' %>
   </div>
-<% end %>
-
-  <h1 class = 'new_post_h1'>新規投稿</h1>
-  <p class="notice"><%= notice %></p>
-  <%= render 'form' %>
-</div>
 </div>

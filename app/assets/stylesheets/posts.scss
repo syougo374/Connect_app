@@ -54,6 +54,15 @@
 
 .new_post {
   display: flex;
+  margin-top: 0;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  overflow: scroll;
+  max-height: 100%;
+  flex-direction: column;
+  word-wrap:break-word;
+  max-width: 100%;
+  margin-left: 15px;
 }
 
 .post_show_container {

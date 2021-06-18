@@ -14,10 +14,12 @@ class PostsController < ApplicationController
   end
 
   def create
+    # binding.irb
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path, notice: '新規投稿しました'
     else
+      # redirect_back(fallback_location: new_post_path)
       render 'new', notice: '投稿に失敗しました'
     end
   end
@@ -64,6 +66,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :address, :image_cash, :user_id, :latitude, :longitude)
+    params.require(:post).permit(:title, :content, :image, :image_cache, :address,  :user_id, :latitude, :longitude)
   end
 end

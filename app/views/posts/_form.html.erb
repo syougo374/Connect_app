@@ -9,9 +9,18 @@
     <dt><%= f.label :address %></dt>
     <dd><%= f.text_field :address,placeholder:"住所を50文字まで入力可" %></dd>
     <br>
+
+
+     <% if @post.image? %>
+      <div class="thumbnail">
+      <%= image_tag @post.image.url %>
+      </div>
+    <% end %><br>
+
     <dt><%= f.label :image %></dt>
     <dd><%= f.file_field :image,autocomplete: "image" %></dd>
     <%= f.hidden_field :image_cache %>
+
     <% if action_name == 'new' %>
     <%= f.submit '投稿する' %>
     <% else %>

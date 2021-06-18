@@ -17,6 +17,7 @@
   <div class="field">
     <%= f.label :アイコン %><br />
     <%= f.file_field :image, autofocus: true, autocomplete: "imgae" %>
+    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="field">

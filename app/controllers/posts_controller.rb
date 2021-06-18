@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   def create
     # binding.irb
     @post = current_user.posts.build(post_params)
+    # binding.irb
     if @post.save
       redirect_to posts_path, notice: '新規投稿しました'
     else

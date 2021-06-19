@@ -16,8 +16,7 @@
   width: 70%;
   height: auto;
   margin:  auto;
-  border-radius: 4px;
-  border: 1px #ddd solid;
+  // border: 1px #ddd solid;
 }
 
 #error_explanation h2 {
@@ -58,6 +57,8 @@
   width: 70%;
   text-align: center;
   border: solid 1px ;
+  border-radius: 4px;
+
   padding: 5%;
   height: auto;
 }

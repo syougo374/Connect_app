@@ -7,10 +7,12 @@
       <div class="search_box">
         <h3>Myプロフィール</h3>
         <div class="user_show_inner">
-          <%= image_tag(@user.image.to_s) %>
+          <div class="user_icon_name">
+            <%= image_tag(@user.image.to_s) %>
+            <p>ユーザー名:<span class="user_name"><%= @user.name %></span></P>
+          </div>
 
           <div class = 'user_show_box'>
-            <%= @user.name %>
             <% if current_user == @user %>
               <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
               <%= link_to "フォロワー:#{@user.followers.count}", followers_user_path(@user) %>

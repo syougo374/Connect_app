@@ -9,12 +9,12 @@
       </div>
       <div class="box-email new_user">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Myアカウントメールアドレス記入' %>
       </div>
       <div class="box-password">
         <div class="column-left new_user">
           <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
+          <%= f.password_field :password, autocomplete: "current-password",placeholder:'Myアカウントパスワード記入' %>
         </div>
       </div>
       <div class="box-login new_user">

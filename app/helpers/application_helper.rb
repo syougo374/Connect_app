@@ -7,4 +7,9 @@ module ApplicationHelper
       link_to name, path, class: 'channel_name'
     end
   end
+
+  def safe_join_default(target)
+		safe_join(target.split("\n"),tag(:br))
+	end
+
 end

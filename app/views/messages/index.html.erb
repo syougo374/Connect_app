@@ -5,24 +5,34 @@
 <div class = "big_ui">
   <div class="ui segment">
     <% @messages.each do |message| %>
-      <% if message.body.present? %>
-        <div class="item">
-          <div class="content">
-            <div class="message_user_name"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
+         <% if message.user_id == current_user.id %>
+          <div class="sender-messages">
+            <div class="dm-user">
+              <strong><%= message.user.name %></strong><span class='space'><i class="fa fa-user" aria-hidden="true"></i>
+            </div>
             <div class="list">
-              <div class="item">
-                <i class="right triangle icon"></i>
-                <div class = "message_header">
-                <%= message.body %>
-                </div>
+              <div class="sender-item">
                 <% if message.user == current_user %>
-                  <%= message.read ? '既読' : '未読' %>
+                  <p><%= safe_join_default(message.body) %></p>
+                  <span><%= '未読/' unless message.read? %></span>
                 <% end %>
               </div>
+              <%= l message.created_at, format: :short %>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% else %>
+          <div class="recipient-messages">
+            <div class="dm-user">
+              <i class="fa fa-user" aria-hidden="true"></i><span class='small-space'><strong><%= message.user.name %></strong>
+            </div>
+            <div class="list">
+              <div class="recipient-item">
+                <p><%= safe_join_default(message.body) %></p>
+              </div>
+              <%= l message.created_at, format: :short %>
+            </div>
+          </div>
+        <% end %>
     <% end %>
   </div>
   <div class="field_message">

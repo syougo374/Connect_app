@@ -33,7 +33,7 @@
 }
 
 .segment  {
-  background-color: rgb(221, 255, 255);
+  background-color: rgb(220, 255, 255);
 }
 
 .message_header {
@@ -58,3 +58,50 @@
   width: 100%;
 }
 
+
+.dm-content{
+  height: 520px;
+  margin-bottom: -15px;
+  padding: 15px 40px;
+  overflow: scroll;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+  background-color: rgb(243, 244, 245);
+}
+
+.dm-user{
+  margin-top: 5px;
+}
+
+.sender-messages{
+  text-align: right;
+  margin-left: 55%;
+  @media screen and (max-width: 767px){
+    margin-left: 25%;
+    }
+  @media screen and (max-width: 479px){
+    margin-left: 5%;
+    }
+}
+
+.sender-item p{
+  background-color: rgb(155, 255, 108);
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  margin-bottom: 0;
+  border-radius: 20px 3px 20px 20px;
+  text-align: left;
+}
+
+.recipient-item p{
+  background-color: white;
+  max-width: 270px;
+  padding: 5px 10px;
+  margin-bottom: 0;
+  border-radius: 3px 20px 20px 20px;
+}
+
+
+.dm-form{
+  margin-bottom: 20px;
+}

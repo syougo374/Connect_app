@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(permitted_parameter)
     respond_to do |format|
       if @comment.save
+        # binding.irb
         format.js { render :index }
       else
         format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
@@ -27,7 +28,7 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
+        flash.now[:notice] = 'コメントが空の為編集できませんでした'
         format.js {render :edit_error}
       end
     end

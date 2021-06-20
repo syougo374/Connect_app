@@ -32,6 +32,7 @@ class PostsController < ApplicationController
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
     @comment = @post.comments.build
+    # binding.irb
   end
 
   def update

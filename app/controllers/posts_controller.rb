@@ -36,9 +36,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.user.id == current_user.id
-      @post.update(post_params)
-      redirect_to post_path(@post), notice: '投稿を編集しました'
+    # binding.irb
+    @post = current_user.posts.build(post_params)
+    if @post.valid?
+      if @post.user.id == current_user.id
+        @post.update(post_params)
+        redirect_to post_path(@post), notice: '投稿を編集しました'
+      end
     else
       render 'edit'
     end

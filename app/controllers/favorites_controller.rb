@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @favorites = current_user.favorites.all.order(created_at: :desc).page(params[:page]).per(3)
   end

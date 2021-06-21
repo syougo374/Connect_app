@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
   def create
     # binding.irb

@@ -17,7 +17,7 @@ user3 = User.create!(
   name: "miemie",
   email: "test3@docomo.com",
   password: "password",
-  image: File.open("public/images/16083C3F-3C68-404A-AAE9-E42169BFDCBB_1_105_c.jpeg"),
+  image: File.open("public/images/CE84F44F-D403-4A98-8D2B-84C0542876CF_1_105_c.jpeg"),
 )
 user4 = User.create!(
   name: "くまモン",

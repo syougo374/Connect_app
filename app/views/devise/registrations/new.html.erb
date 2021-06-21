@@ -39,6 +39,7 @@
         <%= f.submit t('.sign_up') %>
       </div>
       <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+      <%= link_to 'ゲストログイン（管理者用）', users_admin_guest_sign_in_path, method: :post %>
     <% end %>
   </div>
 </div>

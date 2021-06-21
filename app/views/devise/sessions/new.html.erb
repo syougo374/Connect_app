@@ -20,6 +20,7 @@
       <div class="box-login new_user">
         <%= f.submit t('.sign_in') %>
         <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post,class:'new_user' %>
+        <%= link_to 'ゲストログイン（管理者用）', users_admin_guest_sign_in_path, method: :post, class: "new_user" %>
       </div>
     <% end %>
   </div>

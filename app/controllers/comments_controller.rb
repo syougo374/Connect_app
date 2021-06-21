@@ -9,9 +9,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         # binding.irb
+        flash.now[:notice] = "コメントが投稿されました"
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post), notice: '空では投稿できません' }
+        format.html { redirect_to post_path(@post),notice: '空では投稿できません' }
       end
     end
   end
@@ -30,10 +31,13 @@ class CommentsController < ApplicationController
       # binding.irb
       if @comment.valid?
         @comment.update(permitted_parameter)
-        flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
+        if @comment.valid?
+        flash.now[:notice] = 'コメントが編集されました'
+        else 
+          flash.now[:notice] = 'コメントが空の為編集できませんでした'
+        end
       else
-        flash.now[:notice] = 'コメントが空の為編集できませんでした'
         format.js {render :edit}
       end
     end

@@ -2,7 +2,6 @@
 <div class="post_show_container">
  <div class="post_show_inner">
 	<div class="post_icon_box">
-		<p class="notice"><%= notice %></p>
 		<h3>投稿詳細</h3>
 		<%= image_tag(@post.user.image.to_s) %><br>
 		<span class="color">投稿者</span><br>
@@ -21,7 +20,7 @@
 				<%= link_to "投稿編集", edit_post_path(@post),class:"btn btn-outline-success btn-block" %>
 				<%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: 'Are you sure?'} ,class: "btn btn-outline-success btn-block" %>
 				<% end %>
-
+<div class="">
 				<% unless @post.user_id == current_user.id %>
 					<% if @favorite.present? %>
 						<%= link_to("/favorites/#{@post.id}/destroy", {method: "post"}) do %>
@@ -39,6 +38,7 @@
 			<%= render 'map' %>
 			<div class="show_container">
 				<h4>コメント</h4>
+
 				<div class="show_comments">
 				<div id="comments_area">
 					<%= render partial: 'comments/index', locals: { comments: @comments } %>

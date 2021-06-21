@@ -17,7 +17,7 @@ user3 = User.create!(
   name: "miemie",
   email: "test3@docomo.com",
   password: "password",
-  image: File.open("public/images/CE84F44F-D403-4A98-8D2B-84C0542876CF_1_105_c.jpeg"),
+  image: File.open("public/images/A9B7607D-CCAA-47DE-BEA9-779980C6B53A_1_105_c.jpeg"),
 )
 user4 = User.create!(
   name: "くまモン",
@@ -35,8 +35,8 @@ user5 = User.create!(
 post1_1 = Post.create!(
   title: "自然豊か！！",
   content: "壮大な自然が広がっている",
-  address: "熊本県上益城郡山都町下馬尾 286番地4",
-  image: File.open("public/images/spot-kumamoto-kumamoto_10-2.jpeg"),
+  address: "熊本県阿蘇郡小国町黒渕",
+  image: File.open("public/images/15571623369854c-KqtCZG2YQyC7g2JYVxi4Q_thumb_16b0.jpeg"),
   user_id: user1.id,
 )
 post1_2 = Post.create!(

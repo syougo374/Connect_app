@@ -6,7 +6,7 @@ body{
   height: 100%;
 
   background-color: rgb(255, 228, 228);
-  background-image: image-url("watermark.jpeg");
+  background-image: url("/images/watermark.jpeg");
   // background-repeat: no-repeat;
   background-position: center center;
   background-size:cover;
@@ -18,7 +18,7 @@ body{
   text-align: center;
 }
 .main-image {
-  background-image: image-url("top-content-img.png");
+  background-image: url("/images/top-content-img.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size:cover;
@@ -79,9 +79,6 @@ body{
   width: 100%;
 }
 
-
-
-
 .footer-text {
   padding-top: 10px;
 }
@@ -141,6 +138,10 @@ body{
 .alert-notice{
   text-align: center;
   margin-bottom: 0;
+}
+
+.notice {
+  color: crimson;
 }
 
 .content_inner {

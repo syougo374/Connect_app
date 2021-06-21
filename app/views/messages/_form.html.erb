@@ -1,0 +1,9 @@
+<%= form_with(model: [conversation, message]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control", placeholder: '相手にメッセージを送りましょう(100文字以内)' %>
+  </div>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  <div>
+    <%= f.submit "メッセージを送る" %>
+  </div>
+<% end %>

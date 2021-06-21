@@ -2,9 +2,12 @@
 <%= render'application/sidebar' %>
 <div class='container'>
 <div class="conversation_container">
-  <h3 class='text-center conv'><i class="fa fa-comments" aria-hidden="true"></i><span class='small-space'>メッセージ一覧</h3>
+  <h3 class='text-center conv'><i class="fa fa-comments" aria-hidden="true"></i><span class='small-space'>メッセージ一覧</h3><br>
   <div class='container-fulid'>
   <div class='conversations_inner'>
+    <div class='row pagenate-content'>
+    <%= paginate(@conversations) %>
+  </div>
 
     <div class='row mt-4'>
       <% @conversations.each do |conversation| %>
@@ -27,9 +30,6 @@
       <% end %>
     </div>
   </div>
-  </div>
-  <div class='row pagenate-content'>
-    <%= paginate(@conversations) %>
   </div>
 </div>
 </div>

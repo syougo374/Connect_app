@@ -1,13 +1,17 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
   def create
+    # binding.irb
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
     respond_to do |format|
       if @comment.save
+        # binding.irb
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
+        format.html { redirect_to post_path(@post), notice: '空では投稿できません' }
       end
     end
   end
@@ -23,12 +27,14 @@ class CommentsController < ApplicationController
   def update
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
-      if @comment.update(permitted_parameter)
+      # binding.irb
+      if @comment.valid?
+        @comment.update(permitted_parameter)
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
-        format.js {render :edit_error}
+        flash.now[:notice] = 'コメントが空の為編集できませんでした'
+        format.js {render :edit}
       end
     end
   end

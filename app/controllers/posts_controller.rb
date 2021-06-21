@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy ]
-  before_action :authenticate_user!, only:[:new, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_q, only: [:index, :search]
 
   def index
@@ -32,12 +32,17 @@ class PostsController < ApplicationController
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
     @comment = @post.comments.build
+    # binding.irb
   end
 
   def update
-    if @post.user.id == current_user.id
-      @post.update(post_params)
-      redirect_to post_path(@post), notice: '投稿を編集しました'
+    # binding.irb
+    @post = current_user.posts.build(post_params)
+    if @post.valid?
+      if @post.user.id == current_user.id
+        @post.update(post_params)
+        redirect_to post_path(@post), notice: '投稿を編集しました'
+      end
     else
       render 'edit'
     end

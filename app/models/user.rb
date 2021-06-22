@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :messages, dependent: :destroy
-  has_many :conversations, dependent: :destroy
+  # has_many :conversations, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15}
 

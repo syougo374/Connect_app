@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'ユーザー名が空の場合NG' do
-      @user.name = ''
+      @user.name = nil
       expect(@user.valid?).to eq(false)
     end
 
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'メールアドレスが空の場合NG' do
-      @user.email = ''
+      @user.email = nil
       expect(@user.valid?).to eq(false)
     end
 

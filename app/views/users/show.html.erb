@@ -11,7 +11,6 @@
             <%= image_tag(@user.image.to_s) %>
             <p>ユーザー名:<span class="user_name"><%= @user.name %></span></P>
           </div>
-
           <div class = 'user_show_box'>
             <% if current_user == @user %>
               <%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>

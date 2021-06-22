@@ -7,7 +7,6 @@ body{
 
   background-color: rgb(255, 228, 228);
   background-image: url("/images/watermark.jpeg");
-  // background-repeat: no-repeat;
   background-position: center center;
   background-size:cover;
  }
@@ -40,12 +39,10 @@ body{
   width: 90px;
   display:inline-block;
   margin: 0 10px;
-
 }
 
 .item_bar a {
   color: rgb(247, 184, 56);
-
 }
 
 .fixed-bottom {
@@ -61,15 +58,11 @@ body{
   margin: 0 10px;
 }
 
-
-
 .footer {
   position: absolute;
   bottom: 0;
- 
   background-color: #f5f5f5;
   font-size: 1.5rem;
-
 }
 
 .top_container {
@@ -95,7 +88,6 @@ body{
   z-index:999;
 }
 
-
 .container {
   height: 100%;
   position: relative;
@@ -104,10 +96,8 @@ body{
   padding: 0;
   background-color: #fff;
   width: 70%;
-  // overflow: scroll;
   height: 100vh; 
 }
-
 
 .divise_form {
   display: flex;
@@ -122,7 +112,6 @@ body{
   font-size: 5vw;
   color: #ffffff;
 }
-
 
 #logo {
   display: flex;

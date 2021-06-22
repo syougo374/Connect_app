@@ -3,11 +3,8 @@
   <div class = "content_inner">
     <div class="search_box">
       <h3>お気に入り一覧</h3>
-      <%#= image_tag(current_user.image.to_s) %>
-      <%#= current_user.name %>
     </div>
-  <%= paginate @favorites %>
-
+    <%= paginate @favorites %>
     <div class= 'content_target_favorite'>
       <% @favorites.each do |favorite| %>
         <%= link_to post_path(favorite.post.id), class:' post-color','data-turbolinks': false do %>

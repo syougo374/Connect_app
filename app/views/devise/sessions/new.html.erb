@@ -2,7 +2,7 @@
   <div class="box-inner">
     <h2><%= t('.sign_in') %></h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-         <div class = "alert_plece">
+      <div class = "alert_plece">
         <% if alert %>
           <p class="alert alert-error"><%= alert %></p>
         <% end %>

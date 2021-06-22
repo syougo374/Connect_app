@@ -2,7 +2,6 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # binding.irb
     @conversations = Conversation.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 

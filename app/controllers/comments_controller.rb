@@ -3,12 +3,10 @@ class CommentsController < ApplicationController
 
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
   def create
-    # binding.irb
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
     respond_to do |format|
       if @comment.save
-        # binding.irb
         flash.now[:notice] = "コメントが投稿されました"
         format.js { render :index }
       else
@@ -28,13 +26,12 @@ class CommentsController < ApplicationController
   def update
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
-      # binding.irb
       if @comment.valid?
         @comment.update(permitted_parameter)
         format.js { render :index}
         if @comment.valid?
-        flash.now[:notice] = 'コメントが編集されました'
-        else 
+          flash.now[:notice] = 'コメントが編集されました'
+        else
           flash.now[:notice] = 'コメントが空の為編集できませんでした'
         end
       else
@@ -51,6 +48,7 @@ class CommentsController < ApplicationController
       format.js { render :index }
     end
   end
+
   private
   def which_post?
     @post = Post.find(params[:post_id])

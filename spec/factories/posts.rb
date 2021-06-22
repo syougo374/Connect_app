@@ -3,7 +3,6 @@ FactoryBot.define do
     title {'阿蘇山'}
     content {'コンテント'}
     address {'熊本県天草市'}
-    # association :user
   end
   factory :post2,class: Post do
     title {'スカイツリー'}

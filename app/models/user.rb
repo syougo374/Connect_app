@@ -16,7 +16,7 @@ class User < ApplicationRecord
          :omniauthable
 
   def follow!(other_user)
-  active_relationships.create!(followed_id: other_user.id)
+    active_relationships.create!(followed_id: other_user.id)
   end
 
   def following?(other_user)

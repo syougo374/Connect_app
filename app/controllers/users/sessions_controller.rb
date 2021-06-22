@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def admin_guest_sign_in
     guest_user = User.admin_guest
-    sign_in guest_user   # ユーザーをログインさせる
+    sign_in guest_user
     redirect_to root_path, notice: 'ログインしました。(管理者ゲスト)'
   end
 

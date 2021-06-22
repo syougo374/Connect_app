@@ -280,3 +280,10 @@ a {
   height: auto;
 }
 
+.search_index {
+  height: 100%;
+  margin-bottom: -15px;
+  overflow: scroll;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+}

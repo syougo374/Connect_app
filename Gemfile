@@ -46,6 +46,8 @@ gem 'cancancan'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'carrierwave'
 gem 'mimemagic'
+
+
 gem 'dotenv-rails'
 gem 'geocoder'
 gem 'gon'

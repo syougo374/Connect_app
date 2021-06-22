@@ -65,12 +65,12 @@ RSpec.describe '投稿管理機能', type: :system do
         click_on 'Myプロフィール'
         find(".sid_content").click
         click_link '投稿編集'
-        expect(page).to have_content "投稿編集画面"
+        expect(page).to have_content "投稿編集"
         fill_in "post[title]", with: '編集しましたよ'
         click_on 'commit'
-        sleep(0.5)
         expect(page).to have_content "投稿詳細"
         expect(page).to have_content "編集しましたよ"
+        sleep(0.5)
       end
     end
   end

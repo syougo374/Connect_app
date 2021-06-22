@@ -37,9 +37,9 @@
   </div>
   <div class="field_message">
     <%= form_with(model: [@conversation, @message]) do |f| %>
-      <%= f.text_area :body, class: "form-control" %>
-      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-      <%= f.submit "メッセージを送る" %>
+      <%= f.text_area :body, class: "form-control",placeholder: 'メッセージを100文字以内で送ってみよう' %>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+      <%= f.submit "メッセージを送る",class:"btn-outline-success" %>
     <% end %>
   </div>
 </div>

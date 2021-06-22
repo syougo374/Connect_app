@@ -1,5 +1,5 @@
 .ui {
-  height: 620px;
+  height: 70%;
   margin-bottom: -15px;
   padding: 15px 40px;
   overflow: scroll;
@@ -8,7 +8,7 @@
 }
 
 .big_ui {
-  height: 620px;
+  height: 100%;
   margin-bottom: -15px;
   padding: 15px 40px;
   word-wrap : break-word;
@@ -17,8 +17,13 @@
 
 .field_message {
   display: flex;
+  flex-direction: column;
   min-width: 70%;
+  text-align: center;
+  margin-top: 25px;
 }
+
+
 
 .message {
   margin: 0;

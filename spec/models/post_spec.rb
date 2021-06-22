@@ -11,7 +11,7 @@ describe '投稿モデル機能', type: :model do
     end
     context 'タイトルが空の場合' do
       it 'バリデーションエラーとなる' do
-        post.title = ''
+        post.title = nil
         expect(post).to be_invalid
       end
     end
@@ -28,7 +28,7 @@ describe '投稿モデル機能', type: :model do
     end
     context 'コンテントが空の場合' do
       it 'バリデーションエラーとなる' do
-        post.content= ''
+        post.content= nil
         expect(post).to be_invalid
       end
     end
@@ -45,7 +45,7 @@ describe '投稿モデル機能', type: :model do
     end
     context '住所が空の場合' do
       it 'バリデーションエラーとなる' do
-        post.address = ''
+        post.address = nil
         expect(post).to be_invalid
       end
     end

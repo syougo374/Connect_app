@@ -13,9 +13,8 @@
 
 .map {
   width: 100%;
-  height: auto;
+  max-height: 400px !important;
 }
-
 
 .post_show_content {
   display: flex;
@@ -33,9 +32,6 @@
   margin: auto 0 auto 10px;
   width: 50%;
 }
-// .i {
-//   margin-left: 20px;
-// }
 
 .post_show_container {
   width: 100%;
@@ -78,12 +74,9 @@
   padding-top: 2%;
 }
 
-
-
 .post_show {
   text-align: center;
 }
-
 
 ul {
   list-style: none;
@@ -108,7 +101,6 @@ a {
 
 .index_container  {
   display: flex;
-  // flex-direction: column;
   margin-top: 10px;
   width: 90%;
   margin: 15px auto;
@@ -116,10 +108,7 @@ a {
 
 .index_container a{
   display: flex;
-  // width: 100%;
   margin: 10px 10% 10px 0%;
-  // width:70%; border:1px solid #ccc; background-color:#ddeeff;
-  // word-wrap:break-all;
 }
 
 .index_container p {
@@ -132,9 +121,9 @@ a {
   max-height: 72%;
   flex-direction: column;
   word-wrap:break-word;
-  // display: flex;
   width: 100%;
 }
+
 .content_target_user {
   margin-top: 0;
   overflow: scroll;
@@ -143,6 +132,7 @@ a {
   word-wrap:break-word;
   width: 100%;
 }
+
 .content_target_favorite {
   margin-top: 0;
   overflow: scroll;
@@ -185,7 +175,6 @@ a {
   margin: 2% auto;
 }
 
-
 .new_post_h1 {
   margin-top: 15px;
 }
@@ -193,7 +182,6 @@ a {
 .search_box {
   text-align:center;
   margin-bottom: 20px;
-  // padding-top: 20px;
   width: 100%;
 }
 

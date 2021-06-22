@@ -16,7 +16,6 @@
   width: 70%;
   height: auto;
   margin:  auto;
-  // border: 1px #ddd solid;
 }
 
 #error_explanation h2 {
@@ -24,12 +23,9 @@
 }
 
 .box {
-  // position:sticky;
   top: 10%;
   height: auto;
   margin:  auto ;
-
-
   margin-top: 0;
   padding-top: 6%;
   padding-bottom: 6%;
@@ -39,7 +35,6 @@
   word-wrap:break-word;
   max-width: 100%;
   margin-left: 15px;
-  
 }
 
 .session-inner {
@@ -48,7 +43,6 @@
   border-radius: 4px;
   border: 1px #ddd solid;
   padding: 30px 0;
-
 }
 
 .box-inner {
@@ -58,11 +52,9 @@
   text-align: center;
   border: solid 1px ;
   border-radius: 4px;
-
   padding: 5%;
   height: auto;
 }
-
 
 .new_user a{
   margin: 20px 0;
@@ -120,8 +112,6 @@ h1 {
   float: right;
 }
 
-
-
 .box-login {
   margin-bottom: 26px;
   height: min-content;
@@ -140,7 +130,6 @@ h1 {
   cursor: pointer;
   background: #f0c14b;
 }
-
 
 .remember {
   font-size: 13px;
@@ -214,14 +203,12 @@ h1 {
   margin: 5% 0;
 }
 
-
 .box-name input[type="text"], .box-name input[type="text"] {
   width: 100%;
 }
 
 .field_registration_edit {
   width: 100%;
-  
 }
 
 .user_icon_name {

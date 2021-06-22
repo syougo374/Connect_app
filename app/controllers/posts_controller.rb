@@ -4,23 +4,18 @@ class PostsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    # @posts = Post.all.page(params[:page]).per(10)
     @posts = Post.order(created_at: :desc).all.page(params[:page]).per(5)
   end
 
   def search
-# binding.irb
     @results = @q.result
   end
 
   def create
-    # binding.irb
     @post = current_user.posts.build(post_params)
-    # binding.irb
     if @post.save
       redirect_to posts_path, notice: '新規投稿しました'
     else
-      # redirect_back(fallback_location: new_post_path)
       render 'new', notice: '投稿に失敗しました'
     end
   end
@@ -32,17 +27,11 @@ class PostsController < ApplicationController
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
     @comment = @post.comments.build
-    # binding.irb
   end
 
   def update
-    # binding.irb
-    @post = current_user.posts.build(post_params)
-    if @post.valid?
-      if @post.user.id == current_user.id
-        @post.update(post_params)
-        redirect_to post_path(@post), notice: '投稿を編集しました'
-      end
+    if @post.update(post_params)
+      redirect_to post_path(@post), notice: '投稿を編集しました'
     else
       render 'edit'
     end

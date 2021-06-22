@@ -5,8 +5,8 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="box-name">
-          <%= f.label :ニックネーム %><br />
-          <%= f.text_field :name, autofocus: true, autocomplete: "name",placeholder: 'ニックネーム15文字以内' %>
+        <%= f.label :ニックネーム %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name",placeholder: 'ニックネーム15文字以内' %>
       </div>
 
       <div class="box-icon field">
@@ -24,7 +24,7 @@
         <div class="column-left">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+           <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
           <% end %><br />
         </div>
         <%= f.password_field :password, autocomplete: "new-password",placeholder: 'パスワードを6文字以上で記入' %>
@@ -43,4 +43,3 @@
     <% end %>
   </div>
 </div>
-<%#= render "devise/shared/links" %>

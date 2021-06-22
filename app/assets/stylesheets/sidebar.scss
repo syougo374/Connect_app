@@ -31,13 +31,9 @@
 .listings {
   padding-top: 10px;
   position: sticky;
-  // top: 15%;
-  // margin-left: 1rem;
   overflow: scroll;
   height: 100vh; 
-  // width: 100%;
   min-height: 100vh;
-  // height: 100%;
   width: 20%;
   float: left;
   color: #162407;
@@ -60,7 +56,6 @@
 
 .listings_header {
   text-align: left;
-  // font-size: 10%;
   line-height: 1.25rem;
   margin: 0 1rem 0.1rem;
   text-transform: uppercase;
@@ -76,7 +71,6 @@
   text-align: left;
   color: #010101;
   position: sticky;
-
 }
 
 .channel {
@@ -101,4 +95,3 @@
 .channel.active {
   background: #72fce5;
 }
-

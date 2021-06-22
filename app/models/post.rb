@@ -14,10 +14,4 @@ class Post < ApplicationRecord
   validates :address, presence: true
   geocoded_by :address
   after_validation :geocode
-
-  # def save_post(post)
-  #   post_tags = post.split(/[,、]/).reject(&:blank?)
-  #   current_tags = self.tags.pluck(:name) unless self.tags.nil?
-  #   old_post = current_tags - post_tags
-  #   new_post = post_tags - current_tags
 end

@@ -9,7 +9,7 @@ RSpec.describe 'User関連機能',type: :system do
       it 'サインアップできる' do
         find('#sign_up').click
         fill_in "user[name]", with: "つる"
-        attach_file 'user[image]', 'app/assets/images/1280x1024_01.jpeg'
+        attach_file 'user[image]', 'public/images/__B__400x400.jpeg'
         fill_in "user[email]", with: "test@syougo.com"
         fill_in "user[password]", with: "password"
         fill_in "user[password_confirmation]", with: "password"

@@ -7,12 +7,11 @@ RSpec.describe User, type: :model do
   describe 'ユーザーバリデーションテスト' do
 
     it '全て規定の記述済みの場合OK' do
-      # expect(@user.valid?).to eq(true)
       expect(@user).to be_valid
     end
 
     it 'ユーザー名が空の場合NG' do
-      @user.name = ''
+      @user.name = nil
       expect(@user.valid?).to eq(false)
     end
 
@@ -22,7 +21,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'メールアドレスが空の場合NG' do
-      @user.email = ''
+      @user.email = nil
       expect(@user.valid?).to eq(false)
     end
 
@@ -41,7 +40,6 @@ RSpec.describe User, type: :model do
 
     it 'パスワードが６文字以下の場合NG' do
       @user.password =  '12345'
-      # expect(@user.valid?).to eq(false)
       @user.valid?
       expect(@user.errors[:password]).to include('は6文字以上で入力してください')
     end

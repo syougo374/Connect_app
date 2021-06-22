@@ -3,16 +3,14 @@ class CommentsController < ApplicationController
 
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
   def create
-    # binding.irb
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
     respond_to do |format|
       if @comment.save
-        # binding.irb
-        flash.now[:notice] = "コメントが投稿されました"
+        flash.now[:alert] = "コメントが投稿されました"
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post),notice: '空では投稿できません' }
+        format.html { redirect_to post_path(@post),alert: '空では投稿できません' }
       end
     end
   end
@@ -20,7 +18,7 @@ class CommentsController < ApplicationController
   def edit
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
-      flash.now[:notice] = 'コメント編集中'
+      flash.now[:alert] = 'コメント編集中'
       format.js{ render :edit }
     end
   end
@@ -28,14 +26,13 @@ class CommentsController < ApplicationController
   def update
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
-      # binding.irb
       if @comment.valid?
         @comment.update(permitted_parameter)
         format.js { render :index}
         if @comment.valid?
-        flash.now[:notice] = 'コメントが編集されました'
-        else 
-          flash.now[:notice] = 'コメントが空の為編集できませんでした'
+          flash.now[:alert] = 'コメントが編集されました'
+        else
+          flash.now[:alert] = 'コメントが空の為編集できませんでした'
         end
       else
         format.js {render :edit}
@@ -47,10 +44,11 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      flash.now[:notice] = "コメントが削除されました"
+      flash.now[:alert] = "コメントが削除されました"
       format.js { render :index }
     end
   end
+
   private
   def which_post?
     @post = Post.find(params[:post_id])

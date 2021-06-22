@@ -4,7 +4,7 @@
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
-      <h3>みんなの投稿一覧</h3>
+    <h3>みんなの投稿一覧</h3>
     <div class="user_icon_box">
       <%= search_form_for @q, url: search_posts_path do |f| %>
         <ul class ="ulul">
@@ -14,8 +14,7 @@
         </ul>
       <% end %>
     </div>
-        <%= paginate @posts %>
-
+    <%= paginate @posts %>
     <div class= 'content_target'>
       <% @posts.each do |post| %>
         <%= link_to post_path(post), class:' post-color','data-turbolinks': false do %>

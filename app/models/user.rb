@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :favorites_posts, through: :favorites, source: :post
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15}
 
@@ -16,7 +17,7 @@ class User < ApplicationRecord
          :omniauthable
 
   def follow!(other_user)
-  active_relationships.create!(followed_id: other_user.id)
+    active_relationships.create!(followed_id: other_user.id)
   end
 
   def following?(other_user)

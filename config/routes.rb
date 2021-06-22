@@ -26,14 +26,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy,:edit, :update,:destroy]
   end
 
-  # devise_for :admins, controllers: {
-  #   sessions: "admins/sessins"
-  # }
-  # namespace :admins do
-  #   resources :users, only: %i(index destroy)
-  #   resources :questions, only: %i(index destroy)
-  # end
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

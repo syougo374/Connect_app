@@ -33,4 +33,14 @@ RSpec.describe 'Admin', type: :system do
       end
     end
   end
+  context 'ログイン画面の管理者ゲストユーザーボタンから' do
+    it '管理者ページに遷移できる' do
+      visit root_path
+      find('#log_in').click
+      click_link 'ゲストログイン（管理者用）'
+      expect(page).to have_content 'ログインしました。(管理者ゲスト)'
+      click_on '管理者画面'
+      expect(current_path).to eq rails_admin_path
+    end
+  end
 end

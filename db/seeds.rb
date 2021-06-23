@@ -1,3 +1,8 @@
+unkown_user = User.create!(
+  name: 'unkown_user',
+  email: 'unkown@docomo.com',
+  password: '111111'
+)
 user1 = User.create!(
   name: "ちゅるの",
   email: "test@docomo.com",

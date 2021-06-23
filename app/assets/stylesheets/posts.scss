@@ -43,9 +43,15 @@
   border-radius: 50%;
 }
 
+.profiel {
+  font-size: 1.1rem;
+  color: rgba(67, 65, 65, 0.695);
+}
+
 .post_icon_box {
   text-align: center;
   padding-top: 20px;
+  // display: flex;
 }
 
 .new_post {
@@ -220,6 +226,8 @@ a {
   flex-direction: column;
 }
 
+
+
 .like-btn {
   color: #9d9d9d;
   width: 50px;
@@ -286,4 +294,8 @@ a {
   overflow: scroll;
   word-wrap : break-word;
   overflow-wrap : break-word;
+}
+
+.user_show_page {
+  font-size: 1.5rem;
 }

@@ -5,7 +5,11 @@
       <%= link_to 'プロフィール編集', edit_user_registration_path,class:"btn btn-outline-warning" %>
     </div>
       <div class="search_box">
-        <h3>Myプロフィール</h3>
+        <% if current_user.id == @user.id %>
+          <h3>Myプロフィール</h3>
+        <% else %>
+          <h3><%= @user.name %>さんのページ</h3>
+        <% end %>
         <div class="user_show_inner">
           <div class="user_icon_name">
             <%= image_tag(@user.image.to_s) %>
@@ -18,7 +22,7 @@
             <% else %>
               <%= render 'follow_form', user: @user unless current_user == @user %>
               <%= link_to conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post do %>
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <p class="btn btn-primary"><i class="fa fa-envelope-o " aria-hidden="true"></i>DMを送ってみる</p>
               <% end %>
             <% end %>
           </div>

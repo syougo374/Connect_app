@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   # has_many :conversations, dependent: :destroy
 
+  before_destroy :clean_conversations
   validates :name, presence: true, length: { maximum: 15}
 
   devise :database_authenticatable, :registerable,
@@ -44,5 +45,7 @@ class User < ApplicationRecord
     end
   end
 
-
+  def clean_conversations
+    Conversation.where("(sender_id = ?) OR (recipient_id = ?)", self.id, self.id).destroy_all
+  end
 end

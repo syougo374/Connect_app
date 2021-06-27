@@ -57,30 +57,24 @@ Connect
 - geocoder
 
 ### 使用予定Gem
-- 国際化
+
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.1'
 
-- 画像投稿
 gem 'carrierwave'
 gem 'mimemagic'
 
-- Googleマップ
 gem 'dotenv-rails'
 gem 'geocoder'
 gem 'gon'
 gem "gmaps4rails"
 gem 'jquery-ui-rails'
 
-- ページネーション
 gem 'kaminari'
 
-- 暗証番号のハッシュ化
 gem 'bcrypt'
 
-- デザイン関係
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
-- 検索機能
 gem 'ransack'

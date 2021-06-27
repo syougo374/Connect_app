@@ -7,6 +7,7 @@ RSpec.describe 'User関連機能',type: :system do
   describe 'devise関連機能' do
     context '全ての記述が正しい場合' do
       it 'サインアップできる' do
+        # binding.irb
         find('#sign_up').click
         fill_in "user[name]", with: "つる"
         attach_file 'user[image]', 'public/images/__B__400x400.jpeg'

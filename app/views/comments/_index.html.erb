@@ -6,7 +6,7 @@
         <p class="text-break"><%= comment.content %></p>
         <div class="comment_edit_btn">
           <% if current_user == comment.user %>
-            <%= link_to "編集", edit_post_comment_path(@post, comment),remote: true %>
+            <%= link_to "編集", edit_post_comment_path(@post, comment),remote: true,id:"comment_edit_row-#{comment.id}_btn" %>
             <%= link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete, remote:true  %>
           <% end %>
           <p class = "hr"></p>

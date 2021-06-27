@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    # binding.irb
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.valid?

@@ -5,6 +5,10 @@ ja:
       user: ユーザー
       comment: コメント
       message: メッセージ
+      admin: 管理者
+      conversation: 会話ルーム
+      favorite: お気に入り
+      relationship: お気に入り格納
     attributes:
       post:
         title: タイトル

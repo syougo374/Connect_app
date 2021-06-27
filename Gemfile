@@ -32,13 +32,14 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ログイン機能
 gem 'devise'
-gem 'rails-i18n', '~> 5.1'
+# gem 'rails-i18n', '~> 5.1'
 gem 'cancancan'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'devise-bootstrap-views', '~> 1.0'

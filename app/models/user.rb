@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :messages, dependent: :destroy
-  # has_many :conversations, dependent: :destroy
 
   before_destroy :clean_conversations
   validates :name, presence: true, length: { maximum: 15}

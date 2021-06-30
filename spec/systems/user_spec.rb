@@ -7,14 +7,13 @@ RSpec.describe 'User関連機能',type: :system do
   describe 'devise関連機能' do
     context '全ての記述が正しい場合' do
       it 'サインアップできる' do
-        # binding.irb
         find('#sign_up').click
         fill_in "user[name]", with: "つる"
         attach_file 'user[image]', 'public/images/__B__400x400.jpeg'
         fill_in "user[email]", with: "test@syougo.com"
         fill_in "user[password]", with: "password"
         fill_in "user[password_confirmation]", with: "password"
-        sleep(0.5)
+        sleep(0.1)
         click_button 'commit'
         expect(page).to have_content 'みんなの投稿一覧'
         expect(page).to have_content 'アカウント登録が完了しました。'

@@ -15,7 +15,7 @@ RSpec.describe 'メッセージ機能', type: :system do
       it '送信され一覧にコメントが表示される' do
         click_on 'スカイツリー'
         find(".user_show_page").click
-        sleep(0.5)
+        sleep(0.1)
         find(".fa").click
         fill_in "message[body]", with: "こんにちはー"
         click_button 'commit'

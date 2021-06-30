@@ -117,25 +117,3 @@ RSpec.describe 'Admin', type: :system do
     end
   end
 end
-
-
-
-
-# 管理者によるコメント編集
-# find('.nav-pills').find_link('コメント').click
-# find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(8)').find(".list-inline").find_link('編集').click
-# find_by_id('comment_content').set "編集しましたよ〜〜〜"
-# click_button '保存'
-# expect(page).to have_content 'コメントの更新に成功しました'
-
-
-
-# 管理者によるユーザー編集
-# find_by_id("user_email").set "hensyuu@docomo.ne.jp"
-# click_button '保存'
-# expect(page).to have_content 'ユーザーの更新に成功しました'
-
-# ボタン押す関係
-# find('.nav-pills').find_link('投稿').click
-# find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
-# click_on('実行する')

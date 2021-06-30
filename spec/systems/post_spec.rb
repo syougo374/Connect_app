@@ -22,12 +22,12 @@ RSpec.describe '投稿管理機能', type: :system do
         fill_in 'post[title]',with: '確認用タイトル'
         fill_in 'post[content]', with: '確認用コンテント'
         fill_in 'post[address]', with: '確認用住所'
-        sleep(0.5)
+        sleep(0.1)
         click_button 'commit'
         expect(page).to have_content '確認用タイトル'
         expect(page).to have_content '確認用コンテント'
         expect(page).to have_content '確認用住所'
-        sleep(0.5)
+        sleep(0.1)
       end
     end
     context 'タスク作成に失敗した場合' do
@@ -70,7 +70,7 @@ RSpec.describe '投稿管理機能', type: :system do
         click_on 'commit'
         expect(page).to have_content "投稿詳細"
         expect(page).to have_content "編集しましたよ"
-        sleep(0.5)
+        sleep(0.1)
       end
     end
   end

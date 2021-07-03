@@ -5,12 +5,6 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
-  # def destroy
-  #   @conversation = Conversation.find(params[id])
-  #   @conversation.delete
-  #   redirect_to root_path
-  # end
-
   def create
     if Conversation.between(params[:sender_id], params[:recipient_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first

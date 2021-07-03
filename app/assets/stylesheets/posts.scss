@@ -33,10 +33,6 @@
   width: 50%;
 }
 
-.post_show_container {
-  width: 100%;
-}
-
 .post_icon_box img {
   width: 15%;
   height: auto;
@@ -298,4 +294,18 @@ a {
 
 .user_show_page {
   font-size: 1.5rem;
+}
+
+.index_content_post {
+  flex-direction: column;
+  margin: auto 0 ;
+  padding-left: 20px;
+}
+
+@media all {
+  p { color: green; }
+}
+
+.new_post {
+  background: center,no-repeat,url("public/images/8D88EB9F-6E51-447A-B5F0-9160AA2967B1_1_105_c.jpeg");
 }

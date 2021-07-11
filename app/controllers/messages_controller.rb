@@ -5,9 +5,17 @@ class MessagesController < ApplicationController
     @conversation = Conversation.find(params[:conversation_id])
   end
 
+  # def index
+  #   @messages = @conversation.messages.preload(:user).order(:created_at)
+  #   if @messages.last
+  #     @messages.where.not(user_id: current_user.id).update_all(read: true)
+  #   end
+  #   @message = @conversation.messages.build
+  # end
+
   def index
     @messages = @conversation.messages
-    if @messages.length > 10
+    if @messages.length > 100
       @over_ten = false
       @messages = Message.where(id: @messages[-10..-1].pluck(:id))
     end

@@ -7,10 +7,8 @@
         <div class='row pagenate-content'>
           <%= paginate(@conversations) %>
         </div>
-
         <div class='row mt-4'>
           <% @conversations.each do |conversation| %>
-            <%# unless conversation.target_user(current_user).id == User.find_by(name: "unkown_user").id %>
               <% if conversation.target_user(current_user).present? %>
                 <div class='col-md-5 offset-md-1 border rounded-lg my-2 pt-1 posts'>
                   <%= link_to conversation_messages_path(conversation) do%>
@@ -26,7 +24,6 @@
                     </div>
                 <% end %>
               </div>
-            <%# end %>
             <% end %>
           <% end %>
         </div>

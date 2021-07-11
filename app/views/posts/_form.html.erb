@@ -18,7 +18,7 @@
     <dd><%= f.file_field :image,autocomplete: "image" %></dd>
     <%= f.hidden_field :image_cache %>
     <% if action_name == 'new' %>
-      <%= f.submit '投稿する' %>
+      <%= f.submit '投稿する',class:"btn btn-primary" %>
     <% else %>
       <%= f.submit '更新する' %>
     <% end %>

@@ -3,6 +3,8 @@
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
 <div class = "big_ui">
+<div>
+</div>
   <div class="ui segment">
     <% @messages.each do |message| %>
       <% if message.user_id == current_user.id %>
